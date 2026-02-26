@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "persona": "E1",
+    "mission": "Create a premium, modern student community showcase that feels like a tech product, not a bulletin board.",
+    "principles": [
+      "Fusion over Imitation: Mix student vibes with SaaS precision.",
+      "Emotion First: Trust, Growth, Connection.",
+      "Content is King: Every card tells a story.",
+      "Zoom In: High-quality imagery.",
+      "Negative Space: Luxurious padding."
+    ]
+  },
+  "theme": {
+    "mode": "light",
+    "strategy": "Modern Clean",
+    "background_base": "#F5F7FA"
+  },
+  "colors": {
+    "primary": "#1E5AA8",
+    "secondary": "#4CAF50",
+    "background": "#F5F7FA",
+    "foreground": "#0B1B2B",
+    "muted": "#E2E8F0",
+    "card": "#FFFFFF",
+    "border": "#E2E8F0",
+    "accents": {
+      "success": "#4CAF50",
+      "warning": "#F59E0B",
+      "error": "#EF4444"
+    },
+    "gradients": {
+      "hero": "linear-gradient(135deg, #1E5AA8 0%, #4CAF50 100%)",
+      "glass": "rgba(255, 255, 255, 0.7)"
+    }
+  },
+  "typography": {
+    "font_family_heading": "Poppins, sans-serif",
+    "font_family_body": "Inter, sans-serif",
+    "weights": {
+      "heading": "600",
+      "body": "400",
+      "bold": "700"
+    },
+    "tracking": {
+      "heading": "-0.02em",
+      "overline": "0.1em"
+    }
+  },
+  "layout_strategy": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "spacing_scale": "relaxed",
+    "grid_system": "Bento Grid (Mode A for Showcase)",
+    "section_spacing": "py-24 md:py-32"
+  },
+  "components": {
+    "buttons": {
+      "style": "pill",
+      "interaction": "transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300",
+      "primary": "bg-[#1E5AA8] text-white hover:bg-[#16437E]",
+      "secondary": "bg-[#4CAF50] text-white hover:bg-[#3D8B40]"
+    },
+    "cards": {
+      "style": "glass-morphism",
+      "border": "border border-white/20",
+      "shadow": "shadow-xl shadow-blue-900/5",
+      "hover": "hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+    },
+    "inputs": {
+      "style": "flat-solid",
+      "radius": "rounded-xl",
+      "border": "border-gray-200 focus:border-[#1E5AA8] focus:ring-2 focus:ring-[#1E5AA8]/20"
+    }
+  },
+  "motion": {
+    "library": "framer-motion",
+    "default_transition": {
+      "type": "spring",
+      "stiffness": 260,
+      "damping": 20
+    },
+    "scroll_reveal": "whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 20 }} viewport={{ once: true }}"
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-white/70 border border-white/20",
+    "tracing_beam": "Use for Hero CTA or Featured Cards",
+    "noise_texture": "opacity-5 mix-blend-overlay pointer-events-none fixed inset-0 z-50 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"
+  },
+  "image_urls": {
+    "hero": {
+      "main": "https://images.unsplash.com/photo-1758270705902-f50dde4add9f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHw0fHxoYXBweSUyMHVuaXZlcnNpdHklMjBzdHVkZW50c3xlbnwwfHx8fDE3NzIxNDg0ODV8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Diverse group of happy students"
+    },
+    "housing": [
+      {
+        "url": "https://images.unsplash.com/photo-1666282167632-c613fbeb163c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzIxNDg0ODZ8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Modern student apartment living room"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1662454419716-c4c504728811?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzIxNDg0ODZ8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Cozy bedroom"
+      }
+    ],
+    "jobs": [
+      {
+        "url": "https://images.unsplash.com/photo-1760611656007-f767a8082758?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MTJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBtZWV0aW5nfGVufDB8fHx8MTc3MjE0ODQ4N3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Students working in modern office"
+      },
+      {
+        "url": "https://images.pexels.com/photos/28506813/pexels-photo-28506813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Sleek meeting room"
+      }
+    ],
+    "donations": [
+      {
+        "url": "https://images.unsplash.com/photo-1743319349863-8df2906d98bd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBjdXAlMjBib29rfGVufDB8fHx8MTc3MjE0ODQ4N3ww&ixlib=rb-4.1.0&q=85",
+        "alt": "Books and coffee donation"
+      }
+    ],
+    "team": [
+      {
+        "url": "https://images.unsplash.com/photo-1770223914240-c044d5cc3fbb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwzfHxoYXBweSUyMHVuaXZlcnNpdHklMjBzdHVkZW50c3xlbnwwfHx8fDE3NzIxNDg0ODV8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Team member 1"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1594686900103-3c9698dbb31b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwyfHxoYXBweSUyMHVuaXZlcnNpdHklMjBzdHVkZW50c3xlbnwwfHx8fDE3NzIxNDg0ODV8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Team member 2"
+      }
+    ]
+  },
+  "instructions_to_main_agent": {
+    "steps": [
+      "1. Install required packages: `yarn add framer-motion clsx tailwind-merge lucide-react`.",
+      "2. Update `tailwind.config.js` to include custom colors and fonts (Poppins/Inter).",
+      "3. Create the `Header` component with glassmorphism and sticky positioning.",
+      "4. Build the `Hero` section using the split layout or 'Kinetic Texture' concept.",
+      "5. Implement the `Showcase` section using the 'Bento Grid' (Mode A).",
+      "6. Build the `SocialProof` counters using `framer-motion` for counting up.",
+      "7. Create `Housing`, `Jobs`, `Donations` sections using the image URLs provided.",
+      "8. Ensure all cards have `data-testid` attributes.",
+      "9. Add the 'Noise Texture' overlay to the entire body."
+    ],
+    "critical_rules": [
+      "DO NOT use generic centered text for everything.",
+      "Use 'sonner' for toasts.",
+      "Ensure text contrast meets AA standards.",
+      "Use `lucide-react` for icons.",
+      "Mobile-first: Check responsiveness for the Bento Grid."
+    ]
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors.",
+    "Main agent relies on these image URLs. Missing categories = placeholder text which is FORBIDDEN."
+  ]
+}
