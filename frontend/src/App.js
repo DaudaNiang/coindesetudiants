@@ -1,41 +1,22 @@
 import "@/index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner";
-import {
-  Header,
-  HeroSection,
-  ShowcaseSection,
-  StatsSection,
-  HowItWorksSection,
-  HousingSection,
-  DonationsSection,
-  JobsSection,
-  PartnersSection,
-  TeamSection,
-  TestimonialsSection,
-  ContactSection,
-  FinalCTASection,
-  Footer,
-} from "./components/sections";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { HomePage } from "./pages/HomePage";
+import { LogementsPage } from "./pages/LogementsPage";
+import { DonsPage } from "./pages/DonsPage";
+import { OffresPage } from "./pages/OffresPage";
+import { EquipePage } from "./pages/EquipePage";
+import { ContactPage } from "./pages/ContactPage";
 
-// Main Landing Page
-const LandingPage = () => {
+// Layout wrapper
+const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-accent noise-overlay" data-testid="landing-page">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
-        <HeroSection />
-        <ShowcaseSection />
-        <StatsSection />
-        <HowItWorksSection />
-        <HousingSection />
-        <DonationsSection />
-        <JobsSection />
-        <PartnersSection />
-        <TeamSection />
-        <TestimonialsSection />
-        <ContactSection />
-        <FinalCTASection />
+      <main className="flex-1">
+        {children}
       </main>
       <Footer />
     </div>
@@ -47,9 +28,16 @@ function App() {
     <div className="App">
       <Toaster position="top-center" richColors />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/logements" element={<LogementsPage />} />
+            <Route path="/dons" element={<DonsPage />} />
+            <Route path="/offres" element={<OffresPage />} />
+            <Route path="/equipe" element={<EquipePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </div>
   );
