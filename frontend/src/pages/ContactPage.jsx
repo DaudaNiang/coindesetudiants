@@ -170,7 +170,6 @@ _Envoyé depuis le formulaire de contact du site_`;
                       <MessageCircle className="w-4 h-4 mr-2" />Envoyer via WhatsApp
                     </Button>
                   </form>
-                )}
               </div>
             </motion.div>
 
