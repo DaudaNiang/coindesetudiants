@@ -31,14 +31,43 @@ export const ContactPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
     
-    setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setSubmitted(true);
-    setIsSubmitting(false);
+    // Construire le message WhatsApp avec les infos du formulaire
+    const subjectLabels = {
+      logement: 'Logement',
+      don: 'Don',
+      offre: "Offre d'emploi",
+      partenariat: 'Partenariat',
+      autre: 'Autre'
+    };
+    
+    const whatsappMessage = `Bonjour Coin des Étudiants ! 👋
+
+📝 *Nouveau message de contact*
+
+👤 *Nom :* ${formData.name}
+📧 *Contact :* ${formData.email}
+📌 *Sujet :* ${formData.subject ? subjectLabels[formData.subject] : 'Non spécifié'}
+
+💬 *Message :*
+${formData.message}
+
+---
+_Envoyé depuis le formulaire de contact du site_`;
+
+    // Encoder le message pour l'URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Numéro WhatsApp (format international sans +)
+    const whatsappNumber = '33746444913';
+    
+    // Ouvrir WhatsApp avec le message pré-rempli
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    
+    // Réinitialiser le formulaire
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
