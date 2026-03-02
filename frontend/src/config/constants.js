@@ -17,35 +17,38 @@ export const TEAM = [
     name: "Dauda NIANG",
     role: "Co-fondateur",
     subtitle: "Vision & Produit | Développement | Partenariats",
+    description: "Co-architecte visionnaire du projet, il pilote le développement produit et les partenariats stratégiques pour optimiser les opérations quotidiennes.",
     bullets: [
       "Co-architecte visionnaire du projet",
       "Développement produit & partenariats stratégiques",
       "Optimisation des opérations quotidiennes"
     ],
-    image: "https://customer-assets.emergentagent.com/job_coin-demo/artifacts/31jnvmg4_5850706877451275798_121.jpg",
+    image: "https://customer-assets.emergentagent.com/job_coin-demo/artifacts/luec5ro9_image.png",
   },
   {
     name: "Cheikh IBRA NDIAYE",
     role: "Fondateur — CEO",
     subtitle: "Direction Générale | Développement & Contenu",
+    description: "Il pilote la vision et l'exécution globale de Coin des Étudiants, de la construction technique à la création de contenu et la croissance communauté.",
     bullets: [
       "Pilote la vision et l'exécution globale",
       "Construction technique (web/app, cadrage produit)",
       "Création de contenu et croissance communauté"
     ],
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+    image: "https://customer-assets.emergentagent.com/job_coin-demo/artifacts/p63q9lvo_image.png",
     isFounder: true,
   },
   {
     name: "Bassine NIANG",
     role: "Co-fondatrice",
     subtitle: "Organisation | Communauté & Relations Terrain",
+    description: "Moteur de la structuration communautaire, elle assure la modération, l'animation et les relations terrain avec les étudiants et associations.",
     bullets: [
       "Moteur de la structuration communautaire",
       "Modération, animation et qualité des échanges",
       "Relations terrain (étudiants, associations)"
     ],
-    image: "https://customer-assets.emergentagent.com/job_coin-demo/artifacts/ml188bih_5850706877451275799_121.jpg",
+    image: "https://customer-assets.emergentagent.com/job_coin-demo/artifacts/m6z11kp6_image.png",
   },
 ];
 

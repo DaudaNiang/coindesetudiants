@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Users, Heart, Handshake, MessageCircle, Rocket, Calendar } from 'lucide-react';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
+import { TeamCard } from '../components/TeamCard';
 import { TEAM, COMPANY_STORY, LINKS } from '../config/constants';
 
 export const EquipePage = () => {
@@ -89,46 +90,22 @@ export const EquipePage = () => {
         </div>
       </section>
 
-      {/* Team - Same size cards */}
+      {/* Team - Premium Cards */}
       <section className="section-spacing bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-bold text-[#0B1B2B] mb-10 text-center">Rencontrez l'équipe</h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-[#0B1B2B] mb-3">Rencontrez l'équipe</h2>
+            <p className="text-[#64748B]">Les personnes qui font vivre la communauté</p>
+          </motion.div>
           
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="team-section-container">
             {orderedTeam.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`card p-6 ${member.isFounder ? 'ring-2 ring-[#1E5AA8] ring-offset-2' : ''}`}
-              >
-                {member.isFounder ? (
-                  <Badge className="bg-[#1E5AA8] text-white mb-4 mx-auto block w-fit">Fondateur</Badge>
-                ) : (
-                  <Badge className="bg-[#1E5AA8] text-white mb-4 mx-auto block w-fit">Co-fondateur</Badge>
-                )}
-                
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-[#F5F7FA]"
-                />
-                
-                <h3 className="font-bold text-[#0B1B2B] text-center text-lg">{member.name}</h3>
-                <p className="text-[#1E5AA8] font-medium text-center text-sm mb-1">{member.role}</p>
-                <p className="text-xs text-[#64748B] text-center mb-4">{member.subtitle}</p>
-                
-                <ul className="space-y-2">
-                  {member.bullets.map((bullet, i) => (
-                    <li key={i} className="text-xs text-[#64748B] flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#4CAF50] mt-1.5 flex-shrink-0" />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+              <TeamCard key={member.name} member={member} index={index} />
             ))}
           </div>
         </div>
