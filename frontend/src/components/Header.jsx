@@ -23,28 +23,21 @@ export const Header = () => {
   return (
     <header 
       data-testid="header"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'glass-vivid shadow-xl' 
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-md shadow-md' 
+          : 'bg-white'
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-18 md:h-20 py-2">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group" data-testid="logo">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1E5AA8] to-[#4CAF50] rounded-2xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity" />
-              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1E5AA8] to-[#4CAF50] flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl font-poppins">C</span>
-              </div>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-poppins font-bold text-xl text-[#0B1B2B] block leading-tight">
-                Coin des Étudiants
-              </span>
-              <span className="text-xs text-[#1E5AA8] font-medium">La communauté solidaire</span>
-            </div>
+          <Link to="/" className="flex items-center gap-3" data-testid="logo">
+            <img 
+              src="/images/logo.jpg" 
+              alt="Coin des Étudiants" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,10 +46,10 @@ export const Header = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`px-4 py-2 text-sm font-medium rounded-xl transition-all duration-300 ${
+                className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
                   location.pathname === item.href
-                    ? 'text-white bg-gradient-to-r from-[#1E5AA8] to-[#1E5AA8]/90 shadow-lg'
-                    : 'text-[#0B1B2B]/80 hover:text-[#1E5AA8] hover:bg-[#1E5AA8]/10'
+                    ? 'bg-[#1E5AA8] text-white'
+                    : 'text-[#0B1B2B] hover:bg-[#F5F7FA]'
                 }`}
               >
                 {item.label}
@@ -69,9 +62,9 @@ export const Header = () => {
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
               <Button 
                 data-testid="header-whatsapp-btn"
-                className="hidden sm:flex bg-gradient-to-r from-[#4CAF50] to-[#6BC66F] hover:from-[#3D8B40] hover:to-[#4CAF50] text-white rounded-full px-6 py-2.5 shadow-lg shadow-green-500/25 btn-vivid font-semibold"
+                className="hidden sm:flex bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full px-5 py-2 font-semibold shadow-lg shadow-green-500/20"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-4 h-4 mr-2" />
                 Rejoindre WhatsApp
               </Button>
             </a>
@@ -79,14 +72,14 @@ export const Header = () => {
             {/* Mobile Menu Button */}
             <button
               data-testid="mobile-menu-btn"
-              className="lg:hidden p-2.5 rounded-xl bg-[#1E5AA8]/10 hover:bg-[#1E5AA8]/20 transition-colors"
+              className="lg:hidden p-2 rounded-xl hover:bg-[#F5F7FA] transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Menu"
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-[#1E5AA8]" />
+                <X className="w-6 h-6 text-[#0B1B2B]" />
               ) : (
-                <Menu className="w-6 h-6 text-[#1E5AA8]" />
+                <Menu className="w-6 h-6 text-[#0B1B2B]" />
               )}
             </button>
           </div>
@@ -99,18 +92,18 @@ export const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden overflow-hidden"
+              className="lg:hidden overflow-hidden border-t border-gray-100"
               data-testid="mobile-menu"
             >
-              <nav className="py-4 flex flex-col gap-2 border-t border-[#1E5AA8]/10">
+              <nav className="py-4 flex flex-col gap-1">
                 {NAV_ITEMS.map((item) => (
                   <Link
                     key={item.href}
                     to={item.href}
                     className={`px-4 py-3 rounded-xl font-medium transition-all ${
                       location.pathname === item.href
-                        ? 'text-white bg-gradient-to-r from-[#1E5AA8] to-[#1E5AA8]/90'
-                        : 'text-[#0B1B2B] hover:bg-[#1E5AA8]/10'
+                        ? 'bg-[#1E5AA8] text-white'
+                        : 'text-[#0B1B2B] hover:bg-[#F5F7FA]'
                     }`}
                   >
                     {item.label}
@@ -120,9 +113,9 @@ export const Header = () => {
                   href={LINKS.WHATSAPP_GROUP} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="mt-2"
+                  className="mt-3"
                 >
-                  <Button className="w-full bg-gradient-to-r from-[#4CAF50] to-[#6BC66F] text-white rounded-full py-3 font-semibold shadow-lg">
+                  <Button className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full py-3 font-semibold">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Rejoindre WhatsApp
                   </Button>
