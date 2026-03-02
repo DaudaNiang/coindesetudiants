@@ -1,49 +1,37 @@
-# Coin des Étudiants - PRD (Product Requirements Document)
+# Coin des Étudiants - PRD
 
 ## Problème Original
-Site vitrine premium WhatsApp-first pour "Coin des Étudiants" - une communauté étudiante solidaire qui centralise logements, dons, achats/ventes et opportunités (stages/jobs/alternances).
+Site vitrine premium multi-pages WhatsApp-first pour "Coin des Étudiants" - communauté étudiante solidaire (logements, dons, achats/ventes, opportunités).
 
 ## Architecture
 - **Frontend**: React 19 + Tailwind CSS + Framer Motion + Shadcn/UI
-- **Backend**: FastAPI (minimal - formulaire contact)
-- **Style**: Mobile-first, design moderne avec glassmorphism
+- **Pages**: Accueil, Logements, Dons, Offres, Notre équipe, Contact
+- **Design System**: Tokens CSS (primary #1E5AA8, accent #4CAF50, bg #FFFFFF, bgMuted #F5F7FA)
 
 ## User Personas
 1. **Étudiants** - Cherchent logements, dons, jobs/stages
-2. **Bailleurs/Propriétaires** - Proposent des logements
+2. **Bailleurs** - Proposent des logements
 3. **Recruteurs** - Publient des offres d'emploi
 
-## Core Requirements (Statiques)
-- CTA WhatsApp omniprésent
-- Parcours démontrable sans login (cartes d'annonces + modal)
-- Sections: Hero, Showcase, Stats, How it works, Logements, Dons, Offres, Partenaires, Équipe, Témoignages, Contact, Footer
-- Design: Bleu #1E5AA8, Vert #4CAF50, Fond #F5F7FA
-
-## What's Been Implemented (Décembre 2025)
+## What's Been Implemented (Mars 2025)
 
 ### MVP Complet ✅
-- [x] Header sticky avec navigation + CTA WhatsApp
-- [x] Hero section avec dual CTA (WhatsApp + Publier)
-- [x] Section Parcours démontrable avec 6 cartes d'annonces
-- [x] Filtre par catégorie fonctionnel (Logements/Dons/Opportunités)
-- [x] Modal de détail d'annonce avec CTA WhatsApp
-- [x] Compteurs animés (6000+ étudiants, 500+ logements, etc.)
-- [x] Section "Comment ça marche" (3 étapes)
-- [x] Section Logements étudiants
-- [x] Section Dons avec 5 catégories + Section Bailleurs avec FAQ accordéon
-- [x] Section Offres avec tabs (Tout/Stages/Alternances/Jobs)
-- [x] Section Recruteurs B2B
-- [x] Section Partenaires (6 placeholders)
-- [x] Section Équipe (3 membres)
-- [x] Section Témoignages (3 témoignages)
-- [x] Formulaire de contact (visuel)
-- [x] CTA final avec gradient bleu
-- [x] Footer complet avec réseaux sociaux
-- [x] Version mobile responsive
-- [x] Animations Framer Motion au scroll
+- [x] Logo officiel de Coin des Étudiants
+- [x] 6 pages : Accueil, Logements, Dons, Offres, Notre équipe, Contact
+- [x] Header sticky avec navigation active + CTA WhatsApp
+- [x] Bouton WhatsApp flottant sur toutes les pages
+- [x] Statistiques harmonisées (6000+, 500+, 150+, 200+)
+- [x] 7 annonces par service avec images
+- [x] Équipe : Cheikh IBRA NDIAYE (Fondateur) au centre, Dauda NIANG et Bassine NIANG sur les côtés
+- [x] Histoire structurée (Problème/Observation/Solution/Vision)
+- [x] Barre de réassurance partout
+- [x] Footer avec icônes réseaux sociaux
+- [x] SEO (title, meta description, og tags)
+- [x] Mobile responsive
 
 ### Liens Configurés
 - WhatsApp Group: https://chat.whatsapp.com/FmMwTvOaM2aJI98FShbLnC
+- WhatsApp Channel: https://whatsapp.com/channel/0029VbAwDzD8fewrz5ocLE03
 - Instagram: https://www.instagram.com/coin_des_etudiants/
 - LinkedIn: https://www.linkedin.com/company/coin-des-etudiants/
 - TikTok: https://www.tiktok.com/@coindesetudiants
@@ -52,22 +40,17 @@ Site vitrine premium WhatsApp-first pour "Coin des Étudiants" - une communauté
 
 ## Prioritized Backlog
 
-### P0 - Critique
-- ✅ Tous les P0 complétés
-
 ### P1 - Important
-- [ ] Intégration backend du formulaire de contact (envoi email)
-- [ ] Ajout de vrais logos partenaires
+- [ ] Intégration backend du formulaire de contact
+- [ ] Vrais logos partenaires
 - [ ] Photos réelles de l'équipe
 
 ### P2 - Nice to Have
-- [ ] Analytics/tracking (Google Analytics, Facebook Pixel)
-- [ ] SEO avancé (sitemap, schema.org)
-- [ ] Témoignages supplémentaires
-- [ ] Section blog/actualités
+- [ ] Analytics (Google Analytics, Facebook Pixel)
+- [ ] Pages CGU et Confidentialité
+- [ ] Blog/actualités
 
 ## Next Tasks
-1. Remplacer les placeholders partenaires par de vrais logos
-2. Ajouter les photos de l'équipe
-3. Configurer l'envoi d'emails pour le formulaire contact
-4. Optimiser les images pour le SEO
+1. Ajouter les vraies photos de l'équipe
+2. Intégrer les logos partenaires
+3. Configurer l'envoi d'emails pour le formulaire
