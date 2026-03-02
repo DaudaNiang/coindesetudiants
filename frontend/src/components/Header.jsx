@@ -36,8 +36,9 @@ export const Header = () => {
             <img 
               src="/images/logo.jpg" 
               alt="Coin des Étudiants" 
-              className="h-12 w-auto"
+              className="h-14 w-14 rounded-2xl object-cover shadow-md"
             />
+            <span className="hidden sm:block font-bold text-lg text-[#0B1B2B]">Coin des Étudiants</span>
           </Link>
 
           {/* Desktop Navigation */}
