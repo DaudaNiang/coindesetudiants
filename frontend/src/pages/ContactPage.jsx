@@ -106,6 +106,7 @@ export const ContactPage = () => {
                       </label>
                       <Input
                         id="email"
+                        data-testid="contact-email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="ton@email.com"
@@ -119,7 +120,7 @@ export const ContactPage = () => {
                         Sujet
                       </label>
                       <Select value={formData.subject} onValueChange={(value) => setFormData({ ...formData, subject: value })}>
-                        <SelectTrigger className="rounded-xl"><SelectValue placeholder="Choisis un sujet" /></SelectTrigger>
+                        <SelectTrigger data-testid="contact-subject" className="rounded-xl"><SelectValue placeholder="Choisis un sujet" /></SelectTrigger>
                         <SelectContent>
                           <SelectItem value="logement">Logement</SelectItem>
                           <SelectItem value="don">Don</SelectItem>
@@ -136,6 +137,7 @@ export const ContactPage = () => {
                       </label>
                       <Textarea
                         id="message"
+                        data-testid="contact-message"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Ton message..."
