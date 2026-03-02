@@ -3,29 +3,29 @@ import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { 
   MessageCircle, ArrowRight, Home, Gift, Briefcase, Users, 
-  Shield, Search, Heart, Star, MapPin, ChevronRight, CheckCircle,
-  Euro, Clock
+  Shield, Heart, Star, MapPin, ChevronRight, CheckCircle, Euro
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
-import { Input } from '../components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { ReassuranceBar } from '../components/ReassuranceBar';
 import { LINKS, STATS, TESTIMONIALS, DEMO_LOGEMENTS, DEMO_DONS, DEMO_OFFRES, FAQ_SECURITE } from '../config/constants';
 
 // Hero Section
 const HeroSection = () => {
   return (
-    <section data-testid="hero-section" className="relative pt-28 pb-16 bg-white overflow-hidden">
-      <div className="container-custom">
+    <section data-testid="hero-section" className="relative pt-28 pb-20 gradient-hero overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-40 right-0 w-96 h-96 bg-gradient-to-br from-blue-100/50 to-green-100/50 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-green-100/50 to-blue-100/50 rounded-full blur-3xl" />
+      
+      <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B1B2B] mb-6 leading-tight">
               La communauté qui{' '}
@@ -33,33 +33,17 @@ const HeroSection = () => {
               ta vie étudiante
             </h1>
             
-            <p className="text-lg text-[#64748B] mb-6 max-w-lg">
-              Logements, dons, entraide et opportunités (stages/jobs/alternances) — au même endroit.
+            <p className="text-lg text-[#64748B] mb-8 max-w-lg leading-relaxed">
+              Logements, dons, entraide et opportunités (stages/jobs/alternances) — au même endroit, pour les étudiants.
             </p>
 
-            {/* Badges */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <Badge className="badge badge-primary">
-                <Users className="w-4 h-4 mr-1" />
-                +6000 étudiants
-              </Badge>
-              <Badge className="badge badge-accent">
-                <Shield className="w-4 h-4 mr-1" />
-                Communauté modérée
-              </Badge>
-              <Badge className="badge badge-primary">
-                <Heart className="w-4 h-4 mr-1" />
-                Partenaires & assos
-              </Badge>
-            </div>
-
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
                 <Button 
                   data-testid="hero-whatsapp-btn"
                   size="lg"
-                  className="w-full sm:w-auto bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full px-8 font-semibold shadow-lg shadow-green-500/20"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#4CAF50] to-[#3D8B40] hover:from-[#3D8B40] hover:to-[#2E7D32] text-white rounded-full px-8 font-semibold shadow-lg shadow-green-500/25"
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Rejoindre le WhatsApp
@@ -67,7 +51,6 @@ const HeroSection = () => {
               </a>
               <a href={LINKS.PUBLIER} target="_blank" rel="noopener noreferrer">
                 <Button 
-                  data-testid="hero-publish-btn"
                   size="lg"
                   variant="outline"
                   className="w-full sm:w-auto border-2 border-[#1E5AA8] text-[#1E5AA8] hover:bg-[#1E5AA8] hover:text-white rounded-full px-8 font-semibold"
@@ -78,20 +61,52 @@ const HeroSection = () => {
               </a>
             </div>
 
-            <ReassuranceBar />
+            {/* Badges */}
+            <div className="flex flex-wrap gap-3">
+              <Badge className="badge badge-primary">
+                <Users className="w-4 h-4 mr-2" />
+                +6000 étudiants
+              </Badge>
+              <Badge className="badge badge-accent">
+                <Shield className="w-4 h-4 mr-2" />
+                Communauté modérée
+              </Badge>
+              <Badge className="badge badge-primary">
+                <Heart className="w-4 h-4 mr-2" />
+                100% gratuit
+              </Badge>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="hidden lg:block"
           >
-            <img
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80"
-              alt="Étudiants"
-              className="rounded-2xl shadow-xl"
-            />
+            <div className="relative">
+              <img
+                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Étudiants"
+                className="rounded-3xl shadow-2xl"
+              />
+              {/* Floating card */}
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute -left-6 bottom-20 card-premium p-4 shadow-xl"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#4CAF50] to-[#3D8B40] flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#0B1B2B] text-sm">Rejoins maintenant</p>
+                    <p className="text-xs text-[#64748B]">C'est 100% gratuit</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -99,27 +114,197 @@ const HeroSection = () => {
   );
 };
 
-// Stats Section
+// Categories Section
+const CategoriesSection = () => {
+  const categories = [
+    { title: "Logements", desc: "Studios, colocations, chambres...", icon: Home, href: "/logements", count: "500+", gradient: "from-[#1E5AA8] to-[#3B82F6]" },
+    { title: "Dons", desc: "Meubles, livres, électroménager...", icon: Gift, href: "/dons", count: "150+", gradient: "from-[#4CAF50] to-[#6BC66F]" },
+    { title: "Opportunités", desc: "Stages, jobs, alternances...", icon: Briefcase, href: "/offres", count: "200+", gradient: "from-[#F59E0B] to-[#FBBF24]" },
+  ];
+
+  return (
+    <section data-testid="categories-section" className="section-spacing gradient-section-2">
+      <div className="container-custom">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
+            Tout ce dont tu as besoin
+          </h2>
+          <p className="text-[#64748B] text-lg">Au même endroit, pour les étudiants.</p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {categories.map((cat, index) => (
+            <motion.div
+              key={cat.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.15 }}
+            >
+              <Link to={cat.href}>
+                <div className="card-premium p-8 h-full">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center mb-6 shadow-lg`}>
+                    <cat.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <h3 className="text-2xl font-bold text-[#0B1B2B]">{cat.title}</h3>
+                    <Badge className="badge-primary text-xs">{cat.count}</Badge>
+                  </div>
+                  <p className="text-[#64748B] mb-5">{cat.desc}</p>
+                  <span className="text-[#1E5AA8] font-semibold flex items-center group-hover:translate-x-1 transition-transform">
+                    Découvrir <ChevronRight className="w-5 h-5 ml-1" />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Community Preview with Tabs
+const CommunityPreviewSection = () => {
+  return (
+    <section data-testid="community-preview-section" className="section-spacing gradient-section-3">
+      <div className="container-custom">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
+            Aperçu de notre communauté
+          </h2>
+          <p className="text-[#64748B] text-lg">Des annonces réelles partagées par nos membres.</p>
+        </motion.div>
+
+        <Tabs defaultValue="logements" className="max-w-5xl mx-auto">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-10 bg-white p-1.5 rounded-full shadow-md">
+            <TabsTrigger value="logements" className="rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#1E5AA8] data-[state=active]:to-[#3B82F6] data-[state=active]:text-white data-[state=active]:shadow-lg font-semibold">
+              Logements
+            </TabsTrigger>
+            <TabsTrigger value="dons" className="rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#4CAF50] data-[state=active]:to-[#6BC66F] data-[state=active]:text-white data-[state=active]:shadow-lg font-semibold">
+              Dons
+            </TabsTrigger>
+            <TabsTrigger value="offres" className="rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#F59E0B] data-[state=active]:to-[#FBBF24] data-[state=active]:text-white data-[state=active]:shadow-lg font-semibold">
+              Opportunités
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="logements">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {DEMO_LOGEMENTS.slice(0, 6).map((item, i) => (
+                <PreviewCard key={item.id} item={item} type="logement" index={i} />
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="dons">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {DEMO_DONS.slice(0, 6).map((item, i) => (
+                <PreviewCard key={item.id} item={item} type="don" index={i} />
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="offres">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {DEMO_OFFRES.slice(0, 6).map((item, i) => (
+                <PreviewCard key={item.id} item={item} type="offre" index={i} />
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+
+        <div className="text-center mt-10">
+          <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
+            <Button className="bg-gradient-to-r from-[#4CAF50] to-[#3D8B40] text-white rounded-full px-8 font-semibold shadow-lg shadow-green-500/25">
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Voir tout sur WhatsApp
+            </Button>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const PreviewCard = ({ item, type, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: index * 0.1 }}
+    className="card-premium overflow-hidden"
+  >
+    <img src={item.image} alt="" className="w-full h-40 object-cover" />
+    <div className="p-5">
+      <Badge className={`mb-3 ${type === 'logement' ? 'badge-primary' : type === 'don' ? 'badge-accent' : 'bg-amber-100 text-amber-700 border border-amber-200'}`}>
+        {item.type || item.categorie}
+      </Badge>
+      {item.titre && <p className="font-semibold text-[#0B1B2B] mb-2">{item.titre}</p>}
+      <div className="flex items-center gap-2 text-sm text-[#64748B] mb-1">
+        <MapPin className="w-4 h-4" />
+        {item.ville}
+      </div>
+      {item.prix && (
+        <div className="flex items-center gap-2 text-sm mb-3">
+          <Euro className="w-4 h-4 text-[#64748B]" />
+          <span className="font-bold text-[#1E5AA8]">{item.prix}</span>
+        </div>
+      )}
+      <a href={LINKS.WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer">
+        <Button size="sm" className="w-full bg-gradient-to-r from-[#4CAF50] to-[#3D8B40] text-white rounded-full text-sm font-semibold">
+          En savoir plus
+        </Button>
+      </a>
+    </div>
+  </motion.div>
+);
+
+// Stats Section - Now lower in the page
 const StatsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} data-testid="stats-section" className="py-12 bg-gradient-to-r from-[#1E5AA8] to-[#4CAF50]">
-      <div className="container-custom">
+    <section ref={ref} data-testid="stats-section" className="py-20 gradient-stats relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-60 h-60 bg-white rounded-full blur-3xl" />
+      </div>
+      
+      <div className="container-custom relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Une communauté qui grandit chaque jour
+          </h2>
+        </motion.div>
+        
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {STATS.map((stat, index) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.1 }}
-              className="text-center"
+              transition={{ delay: index * 0.15 }}
+              className="stat-card"
             >
-              <div className="text-3xl md:text-4xl font-bold text-white mb-1">
+              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                 {isInView && <CountUp target={stat.value} suffix={stat.suffix} />}
               </div>
-              <p className="text-white/80 text-sm">{stat.label}</p>
+              <p className="text-white/80 font-medium">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -148,306 +333,20 @@ const CountUp = ({ target, suffix }) => {
   return <>{count.toLocaleString()}{suffix}</>;
 };
 
-// Demo Search Section (Parcours démontrable)
-const DemoSearchSection = () => {
-  const [category, setCategory] = useState('');
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const allItems = [...DEMO_LOGEMENTS.slice(0, 2), ...DEMO_DONS.slice(0, 2), ...DEMO_OFFRES.slice(0, 2)];
-
-  const openModal = (item) => {
-    setSelectedItem(item);
-    setIsModalOpen(true);
-  };
-
-  return (
-    <section data-testid="demo-search-section" className="section-spacing bg-[#F5F7FA]">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
-            Découvre ce qui t'attend
-          </h2>
-          <p className="text-[#64748B] max-w-xl mx-auto">
-            Explore un aperçu de notre communauté avant de rejoindre le WhatsApp.
-          </p>
-        </motion.div>
-
-        {/* Mock search */}
-        <div className="card p-6 mb-8 max-w-2xl mx-auto">
-          <div className="grid sm:grid-cols-3 gap-4">
-            <Select value={category} onValueChange={setCategory}>
-              <SelectTrigger className="rounded-xl">
-                <SelectValue placeholder="Catégorie" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="logement">Logement</SelectItem>
-                <SelectItem value="don">Don</SelectItem>
-                <SelectItem value="offre">Opportunité</SelectItem>
-              </SelectContent>
-            </Select>
-            <Input placeholder="Ville" className="rounded-xl" />
-            <Input placeholder="Budget (optionnel)" className="rounded-xl" />
-          </div>
-        </div>
-
-        {/* Demo cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {allItems.map((item, index) => (
-            <motion.div
-              key={`${item.type || item.categorie}-${item.id}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="card overflow-hidden"
-            >
-              <img 
-                src={item.image} 
-                alt={item.titre || item.type}
-                className="w-full h-40 object-cover"
-              />
-              <div className="p-5">
-                <Badge className={`mb-2 ${
-                  item.prix ? 'badge-primary' : 
-                  item.categorie ? 'badge-accent' : 'bg-amber-100 text-amber-700'
-                }`}>
-                  {item.type || item.categorie}
-                </Badge>
-                <h3 className="font-semibold text-[#0B1B2B] mb-2">
-                  {item.titre || item.type}
-                </h3>
-                <div className="flex items-center gap-2 text-sm text-[#64748B] mb-4">
-                  <MapPin className="w-4 h-4" />
-                  {item.ville}
-                  {item.prix && <span className="ml-2 font-semibold text-[#1E5AA8]">{item.prix}</span>}
-                </div>
-                <div className="flex gap-2">
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="flex-1 rounded-xl"
-                    onClick={() => openModal(item)}
-                  >
-                    Voir détails
-                  </Button>
-                  <a href={LINKS.WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <Button size="sm" className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-xl">
-                      <MessageCircle className="w-4 h-4 mr-1" />
-                      WhatsApp
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Modal */}
-        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="sm:max-w-md">
-            {selectedItem && (
-              <>
-                <DialogHeader>
-                  <DialogTitle>{selectedItem.titre || selectedItem.type}</DialogTitle>
-                </DialogHeader>
-                <img 
-                  src={selectedItem.image} 
-                  alt={selectedItem.titre || selectedItem.type}
-                  className="w-full h-48 object-cover rounded-xl mb-4"
-                />
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2 text-sm">
-                    <MapPin className="w-4 h-4 text-[#64748B]" />
-                    <span>{selectedItem.ville}</span>
-                  </div>
-                  {selectedItem.prix && (
-                    <div className="flex items-center gap-2 text-sm">
-                      <Euro className="w-4 h-4 text-[#64748B]" />
-                      <span className="font-semibold text-[#1E5AA8]">{selectedItem.prix}</span>
-                    </div>
-                  )}
-                  {selectedItem.surface && (
-                    <div className="flex items-center gap-2 text-sm">
-                      <Home className="w-4 h-4 text-[#64748B]" />
-                      <span>{selectedItem.surface}</span>
-                    </div>
-                  )}
-                </div>
-                <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full">
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Contacter sur WhatsApp
-                  </Button>
-                </a>
-              </>
-            )}
-          </DialogContent>
-        </Dialog>
-      </div>
-    </section>
-  );
-};
-
-// Categories Section
-const CategoriesSection = () => {
-  const categories = [
-    { title: "Logements", desc: "Studios, colocations, chambres...", icon: Home, href: "/logements", count: "500+", color: "bg-[#1E5AA8]" },
-    { title: "Dons", desc: "Meubles, livres, électroménager...", icon: Gift, href: "/dons", count: "150+", color: "bg-[#4CAF50]" },
-    { title: "Opportunités", desc: "Stages, jobs, alternances...", icon: Briefcase, href: "/offres", count: "200+", color: "bg-amber-500" },
-  ];
-
-  return (
-    <section data-testid="categories-section" className="section-spacing bg-white">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
-            Tout ce dont tu as besoin
-          </h2>
-          <p className="text-[#64748B]">Au même endroit, pour les étudiants.</p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {categories.map((cat, index) => (
-            <motion.div
-              key={cat.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Link to={cat.href}>
-                <div className="card p-6 h-full">
-                  <div className={`w-12 h-12 rounded-xl ${cat.color} flex items-center justify-center mb-4`}>
-                    <cat.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xl font-semibold text-[#0B1B2B]">{cat.title}</h3>
-                    <Badge className="badge-primary text-xs">{cat.count}</Badge>
-                  </div>
-                  <p className="text-[#64748B] text-sm mb-4">{cat.desc}</p>
-                  <span className="text-[#1E5AA8] font-medium text-sm flex items-center">
-                    Découvrir <ChevronRight className="w-4 h-4 ml-1" />
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Community Preview with Tabs
-const CommunityPreviewSection = () => {
-  return (
-    <section data-testid="community-preview-section" className="section-spacing bg-[#F5F7FA]">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
-            Aperçu de notre communauté
-          </h2>
-        </motion.div>
-
-        <Tabs defaultValue="logements" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 mb-8 bg-white p-1 rounded-full">
-            <TabsTrigger value="logements" className="rounded-full data-[state=active]:bg-[#1E5AA8] data-[state=active]:text-white">
-              Logements
-            </TabsTrigger>
-            <TabsTrigger value="dons" className="rounded-full data-[state=active]:bg-[#4CAF50] data-[state=active]:text-white">
-              Dons
-            </TabsTrigger>
-            <TabsTrigger value="offres" className="rounded-full data-[state=active]:bg-amber-500 data-[state=active]:text-white">
-              Opportunités
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="logements">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {DEMO_LOGEMENTS.slice(0, 3).map((item) => (
-                <PreviewCard key={item.id} item={item} type="logement" />
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="dons">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {DEMO_DONS.slice(0, 3).map((item) => (
-                <PreviewCard key={item.id} item={item} type="don" />
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="offres">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {DEMO_OFFRES.slice(0, 3).map((item) => (
-                <PreviewCard key={item.id} item={item} type="offre" />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        <div className="text-center mt-8">
-          <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full px-8 font-semibold">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Voir tout sur WhatsApp
-            </Button>
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const PreviewCard = ({ item, type }) => (
-  <div className="card p-4">
-    <img src={item.image} alt="" className="w-full h-32 object-cover rounded-xl mb-3" />
-    <Badge className={`mb-2 ${type === 'logement' ? 'badge-primary' : type === 'don' ? 'badge-accent' : 'bg-amber-100 text-amber-700'}`}>
-      {item.type || item.categorie}
-    </Badge>
-    <p className="font-medium text-[#0B1B2B] text-sm mb-1">{item.titre || item.type}</p>
-    <div className="flex items-center gap-1 text-xs text-[#64748B] mb-3">
-      <MapPin className="w-3 h-3" />
-      {item.ville}
-      {item.prix && <span className="ml-2 text-[#1E5AA8] font-semibold">{item.prix}</span>}
-    </div>
-    <a href={LINKS.WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer">
-      <Button size="sm" className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full text-xs">
-        Voir sur WhatsApp
-      </Button>
-    </a>
-  </div>
-);
-
 // Security Section
 const SecuritySection = () => {
   return (
-    <section data-testid="security-section" className="section-spacing bg-white">
+    <section data-testid="security-section" className="section-spacing gradient-section-2">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10"
+            className="text-center mb-12"
           >
-            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#4CAF50] flex items-center justify-center">
-              <Shield className="w-8 h-8 text-white" />
+            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#4CAF50] to-[#3D8B40] flex items-center justify-center shadow-lg">
+              <Shield className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
               Communauté sécurisée & modérée
@@ -460,20 +359,27 @@ const SecuritySection = () => {
               { icon: Shield, title: "Modération active", desc: "Équipe réactive 7j/7" },
               { icon: MessageCircle, title: "Signalement facile", desc: "Problème ? On agit vite" },
             ].map((item, index) => (
-              <div key={item.title} className="text-center">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-[#F5F7FA] flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-[#4CAF50]" />
+              <motion.div 
+                key={item.title} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-[#4CAF50]/20 to-[#4CAF50]/10 flex items-center justify-center">
+                  <item.icon className="w-7 h-7 text-[#4CAF50]" />
                 </div>
-                <h4 className="font-semibold text-[#0B1B2B] mb-1">{item.title}</h4>
+                <h4 className="font-bold text-[#0B1B2B] mb-1">{item.title}</h4>
                 <p className="text-sm text-[#64748B]">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <Accordion type="single" collapsible className="card p-4">
+          <Accordion type="single" collapsible className="card-premium p-6">
             {FAQ_SECURITE.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-medium text-[#0B1B2B]">
+                <AccordionTrigger className="text-left font-semibold text-[#0B1B2B]">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-[#64748B]">
@@ -491,42 +397,42 @@ const SecuritySection = () => {
 // Testimonials
 const TestimonialsSection = () => {
   return (
-    <section data-testid="testimonials-section" className="section-spacing bg-[#F5F7FA]">
+    <section data-testid="testimonials-section" className="section-spacing gradient-section-3">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
             Ce qu'ils disent de nous
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-10">
           {TESTIMONIALS.map((t, index) => (
             <motion.div
               key={t.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="card p-6"
+              transition={{ delay: index * 0.15 }}
+              className="card-premium p-8"
             >
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-5">
                 {[...Array(t.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-[#0B1B2B] mb-4 italic">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1E5AA8] to-[#4CAF50] flex items-center justify-center text-white font-semibold">
+              <p className="text-[#0B1B2B] mb-6 text-lg italic leading-relaxed">"{t.text}"</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E5AA8] to-[#4CAF50] flex items-center justify-center text-white font-bold text-lg">
                   {t.avatar}
                 </div>
                 <div>
-                  <p className="font-semibold text-[#0B1B2B] text-sm">{t.name}</p>
-                  <p className="text-xs text-[#64748B]">{t.context} — {t.ville}</p>
+                  <p className="font-bold text-[#0B1B2B]">{t.name}</p>
+                  <p className="text-sm text-[#64748B]">{t.context} — {t.ville}</p>
                 </div>
               </div>
             </motion.div>
@@ -534,9 +440,7 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-sm text-[#64748B]">
-            Tu peux rejoindre et quitter à tout moment — sans engagement.
-          </p>
+          <ReassuranceBar />
         </div>
       </div>
     </section>
@@ -546,26 +450,31 @@ const TestimonialsSection = () => {
 // Final CTA
 const FinalCTASection = () => {
   return (
-    <section data-testid="final-cta-section" className="py-20 bg-gradient-to-br from-[#1E5AA8] to-[#164785]">
-      <div className="container-custom text-center">
+    <section data-testid="final-cta-section" className="py-24 gradient-cta relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-60 h-60 bg-white rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-white rounded-full blur-3xl" />
+      </div>
+      
+      <div className="container-custom text-center relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
             Rejoins +6000 étudiants qui s'entraident
           </h2>
-          <p className="text-white/80 mb-8 max-w-lg mx-auto">
-            Une communauté active, solidaire et bienveillante t'attend.
+          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+            Une communauté active, solidaire et bienveillante t'attend. C'est 100% gratuit.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg"
-                className="bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full px-8 font-semibold shadow-lg"
+                className="bg-white text-[#1E5AA8] hover:bg-gray-100 rounded-full px-10 font-bold shadow-xl"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-6 h-6 mr-2" />
                 Rejoindre le WhatsApp
               </Button>
             </a>
@@ -573,13 +482,12 @@ const FinalCTASection = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#1E5AA8] rounded-full px-8 font-semibold"
+                className="border-2 border-white text-white hover:bg-white hover:text-[#1E5AA8] rounded-full px-10 font-bold"
               >
                 Publier une annonce
               </Button>
             </a>
           </div>
-          <ReassuranceBar />
         </motion.div>
       </div>
     </section>
@@ -591,10 +499,9 @@ export const HomePage = () => {
   return (
     <div data-testid="home-page">
       <HeroSection />
-      <StatsSection />
-      <DemoSearchSection />
       <CategoriesSection />
       <CommunityPreviewSection />
+      <StatsSection />
       <SecuritySection />
       <TestimonialsSection />
       <FinalCTASection />
