@@ -84,13 +84,14 @@ export const ContactPage = () => {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4" data-testid="contact-form">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-[#0B1B2B] mb-1">
                         Nom complet *
                       </label>
                       <Input
                         id="name"
+                        data-testid="contact-name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Ton nom"
