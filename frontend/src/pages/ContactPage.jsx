@@ -178,10 +178,10 @@ _Envoyé depuis le formulaire de contact du site_`;
 
                     <Button 
                       type="submit" 
+                      data-testid="contact-submit"
                       className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full py-5 font-semibold"
-                      disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Envoi...' : <><Send className="w-4 h-4 mr-2" />Envoyer</>}
+                      <MessageCircle className="w-4 h-4 mr-2" />Envoyer via WhatsApp
                     </Button>
                   </form>
                 )}
