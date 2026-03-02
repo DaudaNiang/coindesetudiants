@@ -21,7 +21,7 @@ export const Footer = () => {
               <img 
                 src="/images/logo.jpg" 
                 alt="Coin des Étudiants" 
-                className="h-14 w-auto bg-white rounded-lg p-1"
+                className="h-16 w-16 rounded-2xl object-cover shadow-lg"
               />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed">
