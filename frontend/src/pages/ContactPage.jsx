@@ -99,19 +99,7 @@ _Envoyé depuis le formulaire de contact du site_`;
               <div className="card p-6">
                 <h2 className="text-xl font-bold text-[#0B1B2B] mb-6">Envoie-nous un message</h2>
 
-                {submitted ? (
-                  <div className="text-center py-10">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#4CAF50] flex items-center justify-center">
-                      <Check className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-[#0B1B2B] mb-2">Message envoyé !</h3>
-                    <p className="text-[#64748B] mb-4">Nous te répondrons rapidement.</p>
-                    <Button onClick={() => setSubmitted(false)} variant="outline" className="rounded-full">
-                      Envoyer un autre message
-                    </Button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4" data-testid="contact-form">
+                <form onSubmit={handleSubmit} className="space-y-4" data-testid="contact-form">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-[#0B1B2B] mb-1">
                         Nom complet *
