@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { WhatsAppFloat } from "./components/WhatsAppFloat";
 import { HomePage } from "./pages/HomePage";
 import { LogementsPage } from "./pages/LogementsPage";
 import { DonsPage } from "./pages/DonsPage";
@@ -13,12 +14,13 @@ import { ContactPage } from "./pages/ContactPage";
 // Layout wrapper
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <main className="flex-1">
         {children}
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
