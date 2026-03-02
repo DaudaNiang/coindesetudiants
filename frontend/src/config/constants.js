@@ -69,37 +69,37 @@ export const STATS = [
   { label: "Opportunités partagées", value: 200, suffix: "+" },
 ];
 
-// Logements avec images (7 annonces)
+// Logements avec photos réalistes
 export const DEMO_LOGEMENTS = [
-  { id: 1, type: "Studio meublé", ville: "Paris 13e", prix: "650€/mois", surface: "22m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&q=80" },
-  { id: 2, type: "Chambre colocation", ville: "Lyon 7e", prix: "420€/mois", surface: "14m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&q=80" },
-  { id: 3, type: "T2 meublé", ville: "Bordeaux", prix: "580€/mois", surface: "35m²", dispo: "Dispo 1er mars", image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&q=80" },
-  { id: 4, type: "Studio étudiant", ville: "Toulouse", prix: "480€/mois", surface: "20m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&q=80" },
-  { id: 5, type: "Chambre chez l'habitant", ville: "Nantes", prix: "350€/mois", surface: "12m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1598928506311-c55ez89a2cc8?w=400&q=80" },
-  { id: 6, type: "T1 bis", ville: "Lille", prix: "520€/mois", surface: "28m²", dispo: "Dispo 15 mars", image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80" },
-  { id: 7, type: "Colocation 3 chambres", ville: "Marseille", prix: "380€/mois", surface: "15m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=400&q=80" },
+  { id: 1, type: "Studio meublé", ville: "Paris 13e", prix: "650€/mois", surface: "22m²", dispo: "Disponible", image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 2, type: "Chambre colocation", ville: "Lyon 7e", prix: "420€/mois", surface: "14m²", dispo: "Disponible", image: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 3, type: "T2 meublé", ville: "Bordeaux", prix: "580€/mois", surface: "35m²", dispo: "Dispo 1er mars", image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 4, type: "Studio étudiant", ville: "Toulouse", prix: "480€/mois", surface: "20m²", dispo: "Disponible", image: "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 5, type: "Chambre chez l'habitant", ville: "Nantes", prix: "350€/mois", surface: "12m²", dispo: "Disponible", image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 6, type: "T1 bis", ville: "Lille", prix: "520€/mois", surface: "28m²", dispo: "Dispo 15 mars", image: "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 7, type: "Colocation 3 chambres", ville: "Marseille", prix: "380€/mois", surface: "15m²", dispo: "Disponible", image: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=400" },
 ];
 
-// Dons avec images (7 annonces)
+// Dons avec photos réalistes
 export const DEMO_DONS = [
-  { id: 1, categorie: "Meubles", titre: "Bureau + chaise", ville: "Paris", etat: "Bon état", image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&q=80" },
-  { id: 2, categorie: "Livres", titre: "Manuels médecine L1-L2", ville: "Lyon", etat: "Correct", image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&q=80" },
-  { id: 3, categorie: "Électroménager", titre: "Micro-ondes Samsung", ville: "Bordeaux", etat: "Très bon état", image: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&q=80" },
-  { id: 4, categorie: "Vêtements", titre: "Lot vêtements hiver", ville: "Toulouse", etat: "Bon état", image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=400&q=80" },
-  { id: 5, categorie: "Fournitures", titre: "Kit fournitures bureau", ville: "Nantes", etat: "Neuf", image: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=400&q=80" },
-  { id: 6, categorie: "High-Tech", titre: "Écran 24 pouces", ville: "Lille", etat: "Bon état", image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80" },
-  { id: 7, categorie: "Déco", titre: "Lampe de bureau LED", ville: "Marseille", etat: "Neuf", image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&q=80" },
+  { id: 1, categorie: "Meubles", titre: "Bureau + chaise", ville: "Paris", etat: "Bon état", image: "https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 2, categorie: "Livres", titre: "Manuels médecine L1-L2", ville: "Lyon", etat: "Correct", image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 3, categorie: "Électroménager", titre: "Micro-ondes Samsung", ville: "Bordeaux", etat: "Très bon état", image: "https://images.pexels.com/photos/6996091/pexels-photo-6996091.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 4, categorie: "Vêtements", titre: "Lot vêtements hiver", ville: "Toulouse", etat: "Bon état", image: "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 5, categorie: "Fournitures", titre: "Kit fournitures bureau", ville: "Nantes", etat: "Neuf", image: "https://images.pexels.com/photos/159752/pencil-office-design-creative-159752.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 6, categorie: "High-Tech", titre: "Écran 24 pouces", ville: "Lille", etat: "Bon état", image: "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 7, categorie: "Déco", titre: "Lampe de bureau LED", ville: "Marseille", etat: "Neuf", image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=400" },
 ];
 
-// Offres avec images (7 annonces)
+// Offres avec photos réalistes
 export const DEMO_OFFRES = [
-  { id: 1, type: "Stage", titre: "Stage Marketing Digital", domaine: "Marketing", ville: "Paris", duree: "6 mois", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80" },
-  { id: 2, type: "Alternance", titre: "Alternance Dev Web", domaine: "Tech", ville: "Lyon", duree: "12 mois", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80" },
-  { id: 3, type: "Job étudiant", titre: "Vendeur week-end", domaine: "Commerce", ville: "Bordeaux", duree: "CDI temps partiel", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80" },
-  { id: 4, type: "Stage", titre: "Stage Finance", domaine: "Finance", ville: "Paris", duree: "4 mois", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80" },
-  { id: 5, type: "Alternance", titre: "Alternance RH", domaine: "RH", ville: "Toulouse", duree: "24 mois", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80" },
-  { id: 6, type: "Job étudiant", titre: "Serveur restaurant", domaine: "Restauration", ville: "Nantes", duree: "Week-ends", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80" },
-  { id: 7, type: "Stage", titre: "Stage Communication", domaine: "Communication", ville: "Lille", duree: "5 mois", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&q=80" },
+  { id: 1, type: "Stage", titre: "Stage Marketing Digital", domaine: "Marketing", ville: "Paris", duree: "6 mois", image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 2, type: "Alternance", titre: "Alternance Dev Web", domaine: "Tech", ville: "Lyon", duree: "12 mois", image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 3, type: "Job étudiant", titre: "Vendeur week-end", domaine: "Commerce", ville: "Bordeaux", duree: "CDI temps partiel", image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 4, type: "Stage", titre: "Stage Finance", domaine: "Finance", ville: "Paris", duree: "4 mois", image: "https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 5, type: "Alternance", titre: "Alternance RH", domaine: "RH", ville: "Toulouse", duree: "24 mois", image: "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 6, type: "Job étudiant", titre: "Serveur restaurant", domaine: "Restauration", ville: "Nantes", duree: "Week-ends", image: "https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { id: 7, type: "Stage", titre: "Stage Communication", domaine: "Communication", ville: "Lille", duree: "5 mois", image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=400" },
 ];
 
 // Catégories de dons
