@@ -16,77 +16,52 @@ export const TEAM = [
   {
     name: "Dauda NIANG",
     role: "Co-fondateur",
-    subtitle: "Vision & Produit | Développement | Partenariats & Opérations",
-    bio: "Dauda est le co-architecte visionnaire du projet : il anticipe les besoins, structure l'évolution produit et transforme une ambition en plan concret. Il contribue activement au développement (produit, fonctionnalités, amélioration continue) tout en développant les partenariats stratégiques et en optimisant les opérations pour maximiser l'impact réel de Coin des Étudiants au quotidien.",
+    subtitle: "Vision & Produit | Développement | Partenariats",
+    bullets: [
+      "Co-architecte visionnaire du projet",
+      "Développement produit & partenariats stratégiques",
+      "Optimisation des opérations quotidiennes"
+    ],
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-    position: "left",
   },
   {
     name: "Cheikh IBRA NDIAYE",
-    role: "Fondateur",
-    subtitle: "CEO (Direction Générale) | Développement & Contenu",
-    bio: "Cheikh pilote la vision et l'exécution globale de Coin des Étudiants : stratégie, priorités, coordination des pôles et suivi de la performance. Il est aussi directement impliqué dans la construction technique (développement web/app, cadrage produit) et dans la création de contenu pour porter le message de la marque, renforcer l'engagement et accélérer la croissance de la communauté.",
+    role: "Fondateur — CEO",
+    subtitle: "Direction Générale | Développement & Contenu",
+    bullets: [
+      "Pilote la vision et l'exécution globale",
+      "Construction technique (web/app, cadrage produit)",
+      "Création de contenu et croissance communauté"
+    ],
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
-    position: "center",
     isFounder: true,
   },
   {
     name: "Bassine NIANG",
     role: "Co-fondatrice",
     subtitle: "Organisation | Communauté & Relations Terrain",
-    bio: "Bassine est le moteur de la structuration communautaire : elle organise les actions terrain, construit un cadre clair pour les échanges et veille à la qualité de l'expérience utilisateur au sein de la communauté. Elle supervise la modération, l'animation et la structuration des annonces (dons, logements, services) pour garantir des interactions fluides, sûres et utiles. Elle développe aussi les relations terrain (étudiants, relais locaux, associations) afin d'ancrer Coin des Étudiants dans le réel et faire grandir une communauté solide, active et durable.",
+    bullets: [
+      "Moteur de la structuration communautaire",
+      "Modération, animation et qualité des échanges",
+      "Relations terrain (étudiants, associations)"
+    ],
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
-    position: "right",
   },
 ];
 
-// Histoire de Coin des Étudiants
+// Histoire structurée
 export const COMPANY_STORY = {
-  title: "L'histoire de Coin des Étudiants",
-  content: `Être étudiant en France, c'est souvent devoir faire face à de nombreux défis : trouver un logement, s'équiper à petit prix, accéder à des services abordables ou simplement bénéficier d'un peu de solidarité. Nous avons tous connu ces moments où chaque euro compte, où il faut improviser pour s'en sortir.
-
-En observant notre quotidien, nous avons remarqué que tous les services utiles aux étudiants étaient dispersés : ici une plateforme de dons, là une pour la colocation, ailleurs une autre pour les bons plans. Aucune ne rassemblait tous ces besoins essentiels au même endroit, spécifiquement pour les étudiants.
-
-Les plateformes généralistes comme Leboncoin offrent des solutions, mais elles restent souvent inaccessibles aux budgets étudiants : prix trop élevés, offres inadaptées, risques d'arnaques ou frais d'agence abusifs pour les logements.
-
-Nous voulions créer une alternative étudiante, simple, fiable et solidaire.`,
+  problem: "Être étudiant en France, c'est faire face à de nombreux défis : logement, équipement, services abordables, solidarité. Chaque euro compte.",
+  observation: "Tous les services utiles aux étudiants sont dispersés. Aucune plateforme ne rassemble tous ces besoins au même endroit, spécifiquement pour les étudiants.",
+  solution: "Les plateformes généralistes (Leboncoin) restent inaccessibles aux budgets étudiants : prix élevés, offres inadaptées, arnaques, frais abusifs.",
+  vision: "Créer une alternative étudiante, simple, fiable et solidaire.",
+  timeline: [
+    { year: "2024", event: "Création de la communauté WhatsApp" },
+    { year: "2025", event: "Lancement officiel + 6000 membres" },
+  ]
 };
 
-// Données des annonces (exemples avec localisation uniquement)
-export const DEMO_LOGEMENTS = [
-  { id: 1, type: "Studio", ville: "Paris 13e" },
-  { id: 2, type: "Chambre colocation", ville: "Lyon 7e" },
-  { id: 3, type: "T2 meublé", ville: "Bordeaux" },
-  { id: 4, type: "Studio étudiant", ville: "Toulouse" },
-  { id: 5, type: "Chambre chez l'habitant", ville: "Nantes" },
-  { id: 6, type: "T1 bis", ville: "Lille" },
-  { id: 7, type: "Colocation 3 chambres", ville: "Marseille" },
-  { id: 8, type: "Studio neuf", ville: "Montpellier" },
-];
-
-export const DEMO_DONS = [
-  { id: 1, categorie: "Meubles", ville: "Paris" },
-  { id: 2, categorie: "Livres", ville: "Lyon" },
-  { id: 3, categorie: "Électroménager", ville: "Bordeaux" },
-  { id: 4, categorie: "Vêtements", ville: "Toulouse" },
-  { id: 5, categorie: "Fournitures", ville: "Nantes" },
-  { id: 6, categorie: "High-Tech", ville: "Lille" },
-  { id: 7, categorie: "Déco", ville: "Marseille" },
-  { id: 8, categorie: "Sport", ville: "Strasbourg" },
-];
-
-export const DEMO_OFFRES = [
-  { id: 1, type: "Stage", domaine: "Marketing", ville: "Paris" },
-  { id: 2, type: "Alternance", domaine: "Tech", ville: "Lyon" },
-  { id: 3, type: "Job étudiant", domaine: "Commerce", ville: "Bordeaux" },
-  { id: 4, type: "Stage", domaine: "Finance", ville: "Paris" },
-  { id: 5, type: "Alternance", domaine: "RH", ville: "Toulouse" },
-  { id: 6, type: "Job étudiant", domaine: "Restauration", ville: "Nantes" },
-  { id: 7, type: "Stage", domaine: "Communication", ville: "Lille" },
-  { id: 8, type: "Alternance", domaine: "Data", ville: "Marseille" },
-];
-
-// Statistiques
+// Statistiques harmonisées
 export const STATS = [
   { label: "Étudiants actifs", value: 6000, suffix: "+" },
   { label: "Logements proposés", value: 500, suffix: "+" },
@@ -94,34 +69,89 @@ export const STATS = [
   { label: "Opportunités partagées", value: 200, suffix: "+" },
 ];
 
-// Catégories de dons
-export const DON_CATEGORIES = [
-  { name: "Meubles", icon: "Sofa", color: "from-blue-500 to-blue-600" },
-  { name: "Livres", icon: "BookOpen", color: "from-emerald-500 to-emerald-600" },
-  { name: "Électroménager", icon: "Tv", color: "from-purple-500 to-purple-600" },
-  { name: "Vêtements", icon: "Shirt", color: "from-pink-500 to-pink-600" },
-  { name: "Fournitures", icon: "Pencil", color: "from-amber-500 to-amber-600" },
+// Logements avec images (7 annonces)
+export const DEMO_LOGEMENTS = [
+  { id: 1, type: "Studio meublé", ville: "Paris 13e", prix: "650€/mois", surface: "22m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&q=80" },
+  { id: 2, type: "Chambre colocation", ville: "Lyon 7e", prix: "420€/mois", surface: "14m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&q=80" },
+  { id: 3, type: "T2 meublé", ville: "Bordeaux", prix: "580€/mois", surface: "35m²", dispo: "Dispo 1er mars", image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&q=80" },
+  { id: 4, type: "Studio étudiant", ville: "Toulouse", prix: "480€/mois", surface: "20m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&q=80" },
+  { id: 5, type: "Chambre chez l'habitant", ville: "Nantes", prix: "350€/mois", surface: "12m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1598928506311-c55ez89a2cc8?w=400&q=80" },
+  { id: 6, type: "T1 bis", ville: "Lille", prix: "520€/mois", surface: "28m²", dispo: "Dispo 15 mars", image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80" },
+  { id: 7, type: "Colocation 3 chambres", ville: "Marseille", prix: "380€/mois", surface: "15m²", dispo: "Disponible", image: "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=400&q=80" },
 ];
 
-// Témoignages
+// Dons avec images (7 annonces)
+export const DEMO_DONS = [
+  { id: 1, categorie: "Meubles", titre: "Bureau + chaise", ville: "Paris", etat: "Bon état", image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&q=80" },
+  { id: 2, categorie: "Livres", titre: "Manuels médecine L1-L2", ville: "Lyon", etat: "Correct", image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&q=80" },
+  { id: 3, categorie: "Électroménager", titre: "Micro-ondes Samsung", ville: "Bordeaux", etat: "Très bon état", image: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&q=80" },
+  { id: 4, categorie: "Vêtements", titre: "Lot vêtements hiver", ville: "Toulouse", etat: "Bon état", image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=400&q=80" },
+  { id: 5, categorie: "Fournitures", titre: "Kit fournitures bureau", ville: "Nantes", etat: "Neuf", image: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=400&q=80" },
+  { id: 6, categorie: "High-Tech", titre: "Écran 24 pouces", ville: "Lille", etat: "Bon état", image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80" },
+  { id: 7, categorie: "Déco", titre: "Lampe de bureau LED", ville: "Marseille", etat: "Neuf", image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&q=80" },
+];
+
+// Offres avec images (7 annonces)
+export const DEMO_OFFRES = [
+  { id: 1, type: "Stage", titre: "Stage Marketing Digital", domaine: "Marketing", ville: "Paris", duree: "6 mois", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80" },
+  { id: 2, type: "Alternance", titre: "Alternance Dev Web", domaine: "Tech", ville: "Lyon", duree: "12 mois", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80" },
+  { id: 3, type: "Job étudiant", titre: "Vendeur week-end", domaine: "Commerce", ville: "Bordeaux", duree: "CDI temps partiel", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80" },
+  { id: 4, type: "Stage", titre: "Stage Finance", domaine: "Finance", ville: "Paris", duree: "4 mois", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80" },
+  { id: 5, type: "Alternance", titre: "Alternance RH", domaine: "RH", ville: "Toulouse", duree: "24 mois", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80" },
+  { id: 6, type: "Job étudiant", titre: "Serveur restaurant", domaine: "Restauration", ville: "Nantes", duree: "Week-ends", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80" },
+  { id: 7, type: "Stage", titre: "Stage Communication", domaine: "Communication", ville: "Lille", duree: "5 mois", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&q=80" },
+];
+
+// Catégories de dons
+export const DON_CATEGORIES = [
+  { name: "Meubles", icon: "Sofa", desc: "Bureau, chaise, lit, rangement..." },
+  { name: "Livres", icon: "BookOpen", desc: "Manuels, romans, cours..." },
+  { name: "Électroménager", icon: "Tv", desc: "Micro-ondes, frigo, cafetière..." },
+  { name: "Vêtements", icon: "Shirt", desc: "Été, hiver, accessoires..." },
+  { name: "Fournitures", icon: "Pencil", desc: "Stylos, cahiers, classeurs..." },
+];
+
+// Témoignages améliorés
 export const TESTIMONIALS = [
   {
     name: "Marie L.",
-    context: "Étudiante en droit — Paris",
+    avatar: "M",
+    ville: "Paris",
+    context: "Étudiante en droit",
     text: "J'ai trouvé mon studio en 3 jours grâce à la communauté ! Les membres sont réactifs et bienveillants.",
     rating: 5,
   },
   {
     name: "Amadou K.",
-    context: "Étudiant en médecine — Lyon",
+    avatar: "A",
+    ville: "Lyon",
+    context: "Étudiant en médecine",
     text: "J'ai récupéré tous mes livres de L2 gratuitement. Une vraie solidarité entre étudiants.",
     rating: 5,
   },
   {
     name: "Sophie M.",
-    context: "Étudiante en commerce — Bordeaux",
+    avatar: "S",
+    ville: "Bordeaux",
+    context: "Étudiante en commerce",
     text: "Mon alternance actuelle, je l'ai trouvée via une offre partagée dans le groupe. Merci !",
     rating: 5,
+  },
+];
+
+// FAQ Sécurité
+export const FAQ_SECURITE = [
+  {
+    question: "Comment la communauté est-elle modérée ?",
+    answer: "Notre équipe vérifie les annonces et applique des règles strictes. Les comportements inappropriés sont sanctionnés.",
+  },
+  {
+    question: "Que faire si je rencontre un problème ?",
+    answer: "Tu peux signaler tout comportement suspect directement dans le groupe. Notre équipe intervient rapidement.",
+  },
+  {
+    question: "Puis-je quitter le groupe à tout moment ?",
+    answer: "Oui, tu es libre de rejoindre et quitter la communauté quand tu le souhaites, sans engagement.",
   },
 ];
 
@@ -129,19 +159,19 @@ export const TESTIMONIALS = [
 export const FAQ_BAILLEURS = [
   {
     question: "Quels types de logements puis-je proposer ?",
-    answer: "Tous types : studios, chambres en colocation, appartements, résidences étudiantes. L'essentiel est que le logement soit adapté aux étudiants.",
+    answer: "Tous types : studios, chambres en colocation, appartements, résidences étudiantes.",
   },
   {
     question: "Comment publier mon annonce ?",
-    answer: "Cliquez sur 'Proposer un logement', remplissez le formulaire avec les détails de votre bien, et votre annonce sera diffusée à notre communauté de +6000 étudiants.",
+    answer: "Remplissez le formulaire avec les détails de votre bien. Votre annonce sera diffusée à +6000 étudiants.",
   },
   {
     question: "Est-ce payant ?",
-    answer: "Non, la publication d'annonces est entièrement gratuite. Notre mission est de faciliter l'accès au logement pour les étudiants.",
+    answer: "Non, la publication est entièrement gratuite. Notre mission est de faciliter l'accès au logement.",
   },
   {
     question: "Comment limitez-vous les abus ?",
-    answer: "Nous avons une équipe de modération active et des règles communautaires strictes. Les signalements sont traités rapidement.",
+    answer: "Modération active, règles strictes et signalements traités rapidement.",
   },
 ];
 
@@ -154,3 +184,6 @@ export const NAV_ITEMS = [
   { label: "Notre équipe", href: "/equipe" },
   { label: "Contact", href: "/contact" },
 ];
+
+// Reassurance
+export const REASSURANCE_TEXT = "Réponse rapide via WhatsApp • Communauté modérée • Tu peux quitter à tout moment";
