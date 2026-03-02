@@ -18,8 +18,6 @@ const TikTokIcon = ({ className }) => (
 
 export const ContactPage = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
 
   const validate = () => {
