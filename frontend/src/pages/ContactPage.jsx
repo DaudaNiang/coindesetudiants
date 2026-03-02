@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, Send, Check, MapPin, Instagram, Linkedin } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
