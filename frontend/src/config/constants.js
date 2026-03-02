@@ -22,7 +22,7 @@ export const TEAM = [
       "Développement produit & partenariats stratégiques",
       "Optimisation des opérations quotidiennes"
     ],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    image: "https://customer-assets.emergentagent.com/job_coin-demo/artifacts/31jnvmg4_5850706877451275798_121.jpg",
   },
   {
     name: "Cheikh IBRA NDIAYE",
@@ -45,7 +45,7 @@ export const TEAM = [
       "Modération, animation et qualité des échanges",
       "Relations terrain (étudiants, associations)"
     ],
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+    image: "https://customer-assets.emergentagent.com/job_coin-demo/artifacts/ml188bih_5850706877451275799_121.jpg",
   },
 ];
 
