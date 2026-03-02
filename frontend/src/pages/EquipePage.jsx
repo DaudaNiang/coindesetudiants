@@ -107,7 +107,7 @@ export const EquipePage = () => {
                 {member.isFounder ? (
                   <Badge className="bg-[#1E5AA8] text-white mb-4 mx-auto block w-fit">Fondateur</Badge>
                 ) : (
-                  <Badge className="bg-[#4CAF50] text-white mb-4 mx-auto block w-fit">Co-fondateur</Badge>
+                  <Badge className="bg-[#1E5AA8] text-white mb-4 mx-auto block w-fit">Co-fondateur</Badge>
                 )}
                 
                 <img
