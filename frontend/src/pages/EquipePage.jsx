@@ -104,8 +104,10 @@ export const EquipePage = () => {
                 transition={{ delay: index * 0.1 }}
                 className={`card p-6 ${member.isFounder ? 'ring-2 ring-[#1E5AA8] ring-offset-2' : ''}`}
               >
-                {member.isFounder && (
+                {member.isFounder ? (
                   <Badge className="bg-[#1E5AA8] text-white mb-4 mx-auto block w-fit">Fondateur</Badge>
+                ) : (
+                  <Badge className="bg-[#4CAF50] text-white mb-4 mx-auto block w-fit">Co-fondateur</Badge>
                 )}
                 
                 <img
