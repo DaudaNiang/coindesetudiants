@@ -11,6 +11,7 @@ import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { ReassuranceBar } from '../components/ReassuranceBar';
+import { Footer } from '../components/Footer';
 import { LINKS, STATS, TESTIMONIALS, DEMO_LOGEMENTS, DEMO_DONS, DEMO_OFFRES, FAQ_SECURITE } from '../config/constants';
 
 // Hero Section
@@ -471,7 +472,7 @@ const SocialProofSection = () => {
   const visibleScreenshots = showMore ? screenshots : screenshots.slice(0, 6);
 
   return (
-    <section data-testid="social-proof-section" className="social-proof-section">
+    <section data-testid="social-proof-section" className="py-20 relative z-10">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -565,32 +566,32 @@ const SocialProofSection = () => {
   );
 };
 
-// Final CTA
+// Final CTA - Dark Premium Theme
 const FinalCTASection = () => {
   return (
-    <section data-testid="final-cta-section" className="py-24 gradient-cta relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-60 h-60 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-white rounded-full blur-3xl" />
-      </div>
-      
-      <div className="container-custom text-center relative z-10">
+    <section data-testid="final-cta-section" className="cta-dark-premium py-16 relative">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="cta-card text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Rejoins +6000 étudiants qui s'entraident
+            Rejoins{' '}
+            <span className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] bg-clip-text text-transparent">
+              +6000 étudiants
+            </span>{' '}
+            qui s'entraident
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
             Une communauté active, solidaire et bienveillante t'attend. C'est 100% gratuit.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg"
-                className="bg-white text-[#1E5AA8] hover:bg-gray-100 rounded-full px-10 font-bold shadow-xl"
+                className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] hover:from-[#0086a0] hover:to-[#6bc94a] text-white rounded-full px-10 font-bold shadow-lg shadow-[#0097b2]/30"
               >
                 <MessageCircle className="w-6 h-6 mr-2" />
                 Rejoindre le WhatsApp
@@ -600,7 +601,7 @@ const FinalCTASection = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#1E5AA8] rounded-full px-10 font-bold"
+                className="border-2 border-white/50 text-white hover:bg-white/10 hover:border-white rounded-full px-10 font-bold"
               >
                 Publier une annonce
               </Button>
@@ -622,8 +623,13 @@ export const HomePage = () => {
       <StatsSection />
       <SecuritySection />
       <TestimonialsSection />
-      <SocialProofSection />
-      <FinalCTASection />
+      
+      {/* Dark Premium Wrapper - Continuous background from Social Proof to Footer */}
+      <div className="dark-premium-wrapper">
+        <SocialProofSection />
+        <FinalCTASection />
+        <Footer variant="embedded" />
+      </div>
     </div>
   );
 };

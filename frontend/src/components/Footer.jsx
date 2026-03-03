@@ -10,9 +10,18 @@ const TikTokIcon = ({ className }) => (
   </svg>
 );
 
-export const Footer = () => {
+export const Footer = ({ variant = 'default' }) => {
+  // variant: 'default' = standalone with dark bg, 'embedded' = part of dark wrapper (no bg)
+  const isEmbedded = variant === 'embedded';
+  
   return (
-    <footer data-testid="footer" className="bg-[#0B1B2B] text-white">
+    <footer 
+      data-testid="footer" 
+      className={isEmbedded ? 'text-white' : 'footer-dark-premium text-white'}
+    >
+      {/* Subtle top border */}
+      <div className="border-t border-white/10" />
+      
       <div className="container-custom py-12">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Logo & Slogan */}
@@ -31,13 +40,13 @@ export const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-semibold mb-4">Navigation</h4>
+            <h4 className="font-semibold mb-4 text-white">Navigation</h4>
             <ul className="space-y-2">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href}>
                   <Link 
                     to={item.href} 
-                    className="text-white/70 hover:text-[#4CAF50] transition-colors text-sm"
+                    className="text-white/70 hover:text-[#7ed957] transition-colors text-sm"
                   >
                     {item.label}
                   </Link>
@@ -48,17 +57,17 @@ export const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4 text-white">Contact</h4>
             <a 
               href={LINKS.EMAIL} 
-              className="text-white/70 hover:text-[#4CAF50] transition-colors text-sm block mb-4"
+              className="text-white/70 hover:text-[#7ed957] transition-colors text-sm block mb-4"
             >
               coindesetudiants@gmail.com
             </a>
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
               <Button 
                 data-testid="footer-whatsapp-btn"
-                className="bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full px-5 py-2 font-semibold"
+                className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] hover:from-[#0086a0] hover:to-[#6bc94a] text-white rounded-full px-5 py-2 font-semibold shadow-lg shadow-[#0097b2]/20"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Rejoindre WhatsApp
@@ -74,7 +83,7 @@ export const Footer = () => {
               href={LINKS.INSTAGRAM} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#4CAF50] flex items-center justify-center transition-colors"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-[#0097b2] hover:to-[#7ed957] flex items-center justify-center transition-all duration-300"
               aria-label="Instagram"
               data-testid="footer-instagram"
             >
@@ -84,7 +93,7 @@ export const Footer = () => {
               href={LINKS.LINKEDIN} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#4CAF50] flex items-center justify-center transition-colors"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-[#0097b2] hover:to-[#7ed957] flex items-center justify-center transition-all duration-300"
               aria-label="LinkedIn"
               data-testid="footer-linkedin"
             >
@@ -94,7 +103,7 @@ export const Footer = () => {
               href={LINKS.TIKTOK} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#4CAF50] flex items-center justify-center transition-colors"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-[#0097b2] hover:to-[#7ed957] flex items-center justify-center transition-all duration-300"
               aria-label="TikTok"
               data-testid="footer-tiktok"
             >
@@ -102,7 +111,7 @@ export const Footer = () => {
             </a>
             <a 
               href={LINKS.EMAIL}
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#4CAF50] flex items-center justify-center transition-colors"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-[#0097b2] hover:to-[#7ed957] flex items-center justify-center transition-all duration-300"
               aria-label="Email"
               data-testid="footer-email"
             >

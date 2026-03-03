@@ -1,5 +1,5 @@
 import "@/index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -11,15 +11,19 @@ import { OffresPage } from "./pages/OffresPage";
 import { EquipePage } from "./pages/EquipePage";
 import { ContactPage } from "./pages/ContactPage";
 
-// Layout wrapper
+// Layout wrapper - conditionally renders footer
 const Layout = ({ children }) => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <main className="flex-1">
         {children}
       </main>
-      <Footer />
+      {/* Footer is embedded in HomePage's dark wrapper, show standalone for other pages */}
+      {!isHomePage && <Footer />}
       <WhatsAppFloat />
     </div>
   );

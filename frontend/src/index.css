@@ -635,3 +635,72 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
   }
 }
+
+
+/* ===== DARK PREMIUM BOTTOM WRAPPER (Accueil) ===== */
+.dark-premium-wrapper {
+  background: linear-gradient(
+    180deg, 
+    #050A1A 0%, 
+    #0A1628 30%,
+    #050A1A 70%,
+    #030812 100%
+  );
+  position: relative;
+}
+
+.dark-premium-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(0, 151, 178, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(126, 217, 87, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Footer dark premium background */
+.footer-dark-premium {
+  background: linear-gradient(
+    180deg, 
+    #050A1A 0%, 
+    #030812 100%
+  );
+  position: relative;
+}
+
+.footer-dark-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 10% 50%, rgba(0, 151, 178, 0.06) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 50%, rgba(126, 217, 87, 0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* CTA section in dark wrapper */
+.cta-dark-premium {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-dark-premium .cta-card {
+  background: linear-gradient(135deg, rgba(11, 18, 36, 0.8) 0%, rgba(5, 10, 26, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 48px;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .cta-dark-premium .cta-card {
+    padding: 32px 20px;
+  }
+}
