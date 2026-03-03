@@ -42,19 +42,19 @@ export const ContactPage = () => {
       autre: 'Autre'
     };
     
-    const whatsappMessage = `Bonjour Coin des Étudiants ! 👋
+    const whatsappMessage = `Bonjour Coin des Etudiants,
 
-📝 *Nouveau message de contact*
+*NOUVEAU MESSAGE DE CONTACT*
 
-👤 *Nom :* ${formData.name}
-📧 *Contact :* ${formData.email}
-📌 *Sujet :* ${formData.subject ? subjectLabels[formData.subject] : 'Non spécifié'}
+- Nom : ${formData.name}
+- Contact : ${formData.email}
+- Sujet : ${formData.subject ? subjectLabels[formData.subject] : 'Non specifie'}
 
-💬 *Message :*
+*Message :*
 ${formData.message}
 
 ---
-_Envoyé depuis le formulaire de contact du site_`;
+Envoye depuis le formulaire de contact du site`;
 
     // Encoder le message pour l'URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
