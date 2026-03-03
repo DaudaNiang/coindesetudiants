@@ -42,19 +42,18 @@ export const ContactPage = () => {
       autre: 'Autre'
     };
     
+    // Message simple sans caractères spéciaux
+    const subject = formData.subject ? subjectLabels[formData.subject] : 'Non specifie';
     const whatsappMessage = `Bonjour Coin des Etudiants,
 
-*NOUVEAU MESSAGE DE CONTACT*
+NOUVEAU MESSAGE DE CONTACT
 
-- Nom : ${formData.name}
-- Contact : ${formData.email}
-- Sujet : ${formData.subject ? subjectLabels[formData.subject] : 'Non specifie'}
+Nom: ${formData.name}
+Contact: ${formData.email}
+Sujet: ${subject}
 
-*Message :*
-${formData.message}
-
----
-Envoye depuis le formulaire de contact du site`;
+Message:
+${formData.message}`;
 
     // Encoder le message pour l'URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -62,11 +61,11 @@ Envoye depuis le formulaire de contact du site`;
     // Numéro WhatsApp (format international sans +)
     const whatsappNumber = '33746444913';
     
-    // Ouvrir WhatsApp avec le message pré-rempli
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    // Utiliser le lien direct WhatsApp
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
-    // Réinitialiser le formulaire
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    // Ouvrir dans un nouvel onglet
+    window.location.href = whatsappUrl;
   };
 
   return (
