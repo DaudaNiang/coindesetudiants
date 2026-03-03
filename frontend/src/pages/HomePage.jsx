@@ -16,6 +16,14 @@ import { LINKS, STATS, TESTIMONIALS, DEMO_LOGEMENTS, DEMO_DONS, DEMO_OFFRES, FAQ
 
 // Hero Section
 const HeroSection = () => {
+  // Floating icons data
+  const floatingIcons = [
+    { icon: Home, label: "Logements", color: "from-[#1E5AA8] to-[#3B82F6]", position: "top-8 -right-4", delay: 0, animation: "float-slow" },
+    { icon: Gift, label: "Dons", color: "from-[#4CAF50] to-[#7ed957]", position: "top-1/3 -right-8", delay: 0.5, animation: "float-medium" },
+    { icon: Briefcase, label: "Offres", color: "from-[#F59E0B] to-[#FBBF24]", position: "bottom-1/3 -right-6", delay: 1, animation: "float-fast" },
+    { icon: Shield, label: "Modération", color: "from-[#0097b2] to-[#7ed957]", position: "bottom-16 -right-2", delay: 1.5, animation: "float-medium" },
+  ];
+
   return (
     <section data-testid="hero-section" className="relative pt-28 pb-20 gradient-hero overflow-hidden">
       {/* Decorative elements */}
@@ -80,6 +88,7 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
+          {/* Right side - Image with premium elements */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -87,29 +96,72 @@ const HeroSection = () => {
             className="hidden lg:block"
           >
             <div className="relative">
+              {/* Premium Halo */}
+              <div className="hero-premium-halo" />
+              
+              {/* Main Image */}
               <img
                 src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Étudiants"
-                className="rounded-3xl shadow-2xl"
+                className="rounded-3xl shadow-2xl relative z-10"
               />
-              {/* Floating card */}
+              
+              {/* Floating Icons - Desktop */}
+              <div className="hero-floating-icons-desktop">
+                {floatingIcons.map((item, index) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 + item.delay }}
+                    className={`hero-floating-icon ${item.position} ${item.animation}`}
+                  >
+                    <div className={`icon-wrapper bg-gradient-to-br ${item.color}`}>
+                      <item.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="icon-label">{item.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Premium Floating Card - Rejoins maintenant */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -left-6 bottom-20 card-premium p-4 shadow-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="absolute -left-8 bottom-16 z-20"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#4CAF50] to-[#3D8B40] flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-white" />
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="hero-premium-card"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="card-check">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#0B1B2B] text-sm">Rejoins maintenant</p>
+                      <p className="text-xs text-[#64748B]">C'est 100% gratuit</p>
+                      <p className="text-[10px] text-[#0097b2] font-medium mt-0.5">Réponse rapide via WhatsApp</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-[#0B1B2B] text-sm">Rejoins maintenant</p>
-                    <p className="text-xs text-[#64748B]">C'est 100% gratuit</p>
-                  </div>
-                </div>
+                </motion.div>
               </motion.div>
             </div>
           </motion.div>
+          
+          {/* Floating Icons - Mobile (under content) */}
+          <div className="hero-floating-icons-mobile lg:hidden">
+            {floatingIcons.slice(0, 2).map((item) => (
+              <div key={item.label} className="hero-floating-icon">
+                <div className={`icon-wrapper bg-gradient-to-br ${item.color}`}>
+                  <item.icon className="w-4 h-4 text-white" />
+                </div>
+                <span className="icon-label text-xs">{item.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
