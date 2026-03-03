@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { 
   MessageCircle, ArrowRight, Home, Gift, Briefcase, Users, 
-  Shield, Heart, Star, MapPin, ChevronRight, CheckCircle, Euro
+  Shield, Heart, Star, MapPin, ChevronRight, CheckCircle, Euro,
+  Image, ChevronDown
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
@@ -447,6 +448,123 @@ const TestimonialsSection = () => {
   );
 };
 
+// Social Proof / WhatsApp Screenshots Section
+const SocialProofSection = () => {
+  const [showMore, setShowMore] = useState(false);
+  
+  // Placeholder data for screenshots (6 initial, 6 more on click)
+  const screenshots = [
+    { id: 1, image: null, label: "Retour bailleur Paris" },
+    { id: 2, image: null, label: "Mise en relation réussie" },
+    { id: 3, image: null, label: "Logement trouvé Lyon" },
+    { id: 4, image: null, label: "Retour propriétaire" },
+    { id: 5, image: null, label: "Témoignage Bordeaux" },
+    { id: 6, image: null, label: "Remerciement bailleur" },
+    { id: 7, image: null, label: "Colocation Lille" },
+    { id: 8, image: null, label: "Feedback positif" },
+    { id: 9, image: null, label: "Logement Toulouse" },
+    { id: 10, image: null, label: "Retour satisfaction" },
+    { id: 11, image: null, label: "Mise en relation" },
+    { id: 12, image: null, label: "Témoignage Nantes" },
+  ];
+
+  const visibleScreenshots = showMore ? screenshots : screenshots.slice(0, 6);
+
+  return (
+    <section data-testid="social-proof-section" className="social-proof-section">
+      <div className="container-custom">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="social-proof-container"
+        >
+          {/* Header */}
+          <div className="text-center mb-10">
+            {/* Badges */}
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              <span className="social-proof-badge">
+                <Shield className="w-3.5 h-3.5" />
+                Communauté modérée
+              </span>
+              <span className="social-proof-badge">
+                <Users className="w-3.5 h-3.5" />
+                +6000 étudiants
+              </span>
+              <span className="social-proof-badge">
+                <MessageCircle className="w-3.5 h-3.5" />
+                Réponse rapide via WhatsApp
+              </span>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Ce que nos{' '}
+              <span className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] bg-clip-text text-transparent">
+                bailleurs
+              </span>{' '}
+              disent de nous
+            </h2>
+            
+            {/* Subtitle */}
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              Des retours réels partagés sur WhatsApp : sérieux, réactivité et mises en relation rapides.
+            </p>
+          </div>
+
+          {/* Screenshots Grid */}
+          <div className="screenshots-grid mb-10">
+            {visibleScreenshots.map((screenshot, index) => (
+              <motion.div
+                key={screenshot.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="whatsapp-screenshot-card"
+                data-testid={`screenshot-card-${screenshot.id}`}
+              >
+                {screenshot.image ? (
+                  <img src={screenshot.image} alt={screenshot.label} />
+                ) : (
+                  <div className="screenshot-placeholder">
+                    <div className="screenshot-placeholder-icon">
+                      <Image className="w-6 h-6 text-white/30" />
+                    </div>
+                    <p className="screenshot-placeholder-text">
+                      Capture WhatsApp
+                    </p>
+                    <p className="screenshot-placeholder-subtext">
+                      {screenshot.label}
+                    </p>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Load More Button */}
+          <div className="text-center">
+            <button
+              onClick={() => setShowMore(!showMore)}
+              className="social-proof-btn inline-flex items-center gap-2"
+              data-testid="show-more-testimonials-btn"
+            >
+              {showMore ? 'Afficher moins' : 'Afficher plus de témoignages'}
+              <ChevronDown className={`w-5 h-5 transition-transform ${showMore ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
+
+          {/* Legal Note */}
+          <p className="text-center text-white/40 text-xs mt-8">
+            Les captures sont des retours authentiques. Aucun résultat n'est garanti.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 // Final CTA
 const FinalCTASection = () => {
   return (
@@ -504,6 +622,7 @@ export const HomePage = () => {
       <StatsSection />
       <SecuritySection />
       <TestimonialsSection />
+      <SocialProofSection />
       <FinalCTASection />
     </div>
   );
