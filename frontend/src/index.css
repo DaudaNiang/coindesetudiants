@@ -839,3 +839,39 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 }
+
+/* ─── Testimonials Carousel ─────────────────────────────────────── */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll-left 60s linear infinite;
+  padding: 8px 0 16px;
+}
+
+.testimonials-track:hover {
+  animation-play-state: paused;
+}
+
+.testimonial-card-slide {
+  width: 300px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(30, 90, 168, 0.08);
+  border: 1px solid rgba(30, 90, 168, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.testimonial-card-slide:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(30, 90, 168, 0.14);
+}

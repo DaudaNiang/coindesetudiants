@@ -15,9 +15,10 @@ export const LINKS = {
 export const TEAM = [
   {
     name: "Dauda NIANG",
+    badge: "CPTO",
     role: "Co-fondateur",
     subtitle: "Vision & Produit | Développement | Partenariats",
-    description: "Co-architecte visionnaire du projet, il pilote le développement produit et les partenariats stratégiques pour optimiser les opérations quotidiennes.",
+    description: "Co-architecte du projet, il pilote la conception produit et le développement technologique de Coin des Étudiants. Il conçoit des solutions scalables, optimise l'expérience utilisateur et met en place des systèmes performants pour soutenir la croissance et les opérations au quotidien.",
     bullets: [
       "Co-architecte visionnaire du projet",
       "Développement produit & partenariats stratégiques",
@@ -27,9 +28,10 @@ export const TEAM = [
   },
   {
     name: "Cheikh IBRA NDIAYE",
+    badge: "CEO",
     role: "Fondateur — CEO",
     subtitle: "Direction Générale | Développement & Contenu",
-    description: "Il pilote la vision et l'exécution globale de Coin des Étudiants, de la construction technique à la création de contenu et la croissance communauté.",
+    description: "Il pilote la vision stratégique et la direction globale de Coin des Étudiants. Il définit les priorités, supervise l'exécution et veille à l'alignement entre produit, croissance et opérations afin de structurer un développement solide et durable.",
     bullets: [
       "Pilote la vision et l'exécution globale",
       "Construction technique (web/app, cadrage produit)",
@@ -40,9 +42,10 @@ export const TEAM = [
   },
   {
     name: "Bassine NIANG",
+    badge: "Présidente",
     role: "Co-fondatrice",
     subtitle: "Organisation | Communauté & Relations Terrain",
-    description: "Moteur de la structuration communautaire, elle assure la modération, l'animation et les relations terrain avec les étudiants et associations.",
+    description: "Elle supervise l'organisation et le développement de la communauté de Coin des Étudiants. Elle structure les opérations terrain, renforce les relations utilisateurs et partenaires, et assure une dynamique active pour soutenir la croissance et l'engagement.",
     bullets: [
       "Moteur de la structuration communautaire",
       "Modération, animation et qualité des échanges",
@@ -116,30 +119,28 @@ export const DON_CATEGORIES = [
 
 // Témoignages améliorés
 export const TESTIMONIALS = [
-  {
-    name: "Marie L.",
-    avatar: "M",
-    ville: "Paris",
-    context: "Étudiante en droit",
-    text: "J'ai trouvé mon studio en 3 jours grâce à la communauté ! Les membres sont réactifs et bienveillants.",
-    rating: 5,
-  },
-  {
-    name: "Amadou K.",
-    avatar: "A",
-    ville: "Lyon",
-    context: "Étudiant en médecine",
-    text: "J'ai récupéré tous mes livres de L2 gratuitement. Une vraie solidarité entre étudiants.",
-    rating: 5,
-  },
-  {
-    name: "Sophie M.",
-    avatar: "S",
-    ville: "Bordeaux",
-    context: "Étudiante en commerce",
-    text: "Mon alternance actuelle, je l'ai trouvée via une offre partagée dans le groupe. Merci !",
-    rating: 5,
-  },
+  { name: "Marie L.", avatar: "M", ville: "Paris", context: "Étudiante en droit", text: "J'ai trouvé mon studio en 3 jours grâce à la communauté ! Les membres sont réactifs et bienveillants.", rating: 5 },
+  { name: "Amadou K.", avatar: "A", ville: "Lyon", context: "Étudiant en médecine", text: "J'ai récupéré tous mes livres de L2 gratuitement. Une vraie solidarité entre étudiants.", rating: 5 },
+  { name: "Sophie M.", avatar: "S", ville: "Bordeaux", context: "Étudiante en commerce", text: "Mon alternance actuelle, je l'ai trouvée via une offre partagée dans le groupe. Merci !", rating: 5 },
+  { name: "Lucas T.", avatar: "L", ville: "Toulouse", context: "Étudiant en informatique", text: "J'ai vendu mon vieux PC et trouvé un écran en parfait état pour presque rien. Vraiment utile !", rating: 5 },
+  { name: "Fatou D.", avatar: "F", ville: "Lille", context: "Étudiante en psychologie", text: "Une coloc trouvée en moins d'une semaine. La communauté est top, tout le monde est solidaire.", rating: 5 },
+  { name: "Théo R.", avatar: "T", ville: "Marseille", context: "Étudiant en architecture", text: "Super groupe ! J'ai trouvé un job étudiant le jour même où j'ai posté ma recherche.", rating: 5 },
+  { name: "Inès B.", avatar: "I", ville: "Nantes", context: "Étudiante en sciences", text: "Des meubles gratuits pour mon premier appart. Je n'aurais pas pu m'en sortir sans Coin des Étudiants.", rating: 5 },
+  { name: "Youssef A.", avatar: "Y", ville: "Strasbourg", context: "Étudiant en gestion", text: "Stage de 6 mois déniché directement dans le groupe. La communauté est une mine d'or.", rating: 5 },
+  { name: "Camille P.", avatar: "C", ville: "Rennes", context: "Étudiante en lettres", text: "J'ai donné mes vieux manuels et reçu exactement ceux dont j'avais besoin. L'entraide à son meilleur !", rating: 5 },
+  { name: "Omar S.", avatar: "O", ville: "Lyon", context: "Étudiant en droit", text: "Chambre chez l'habitant trouvée rapidement, prix raisonnable. La communauté fait vraiment la différence.", rating: 5 },
+  { name: "Léa V.", avatar: "L", ville: "Paris", context: "Étudiante en médecine", text: "Tous mes livres de PACES récupérés gratuitement ! Des centaines d'euros économisés dès la première semaine.", rating: 5 },
+  { name: "Kévin M.", avatar: "K", ville: "Bordeaux", context: "Étudiant en sport", text: "J'ai revendu mon équipement sportif facilement. Les transactions sont rapides et les gens fiables.", rating: 5 },
+  { name: "Aïcha N.", avatar: "A", ville: "Nice", context: "Étudiante en tourisme", text: "Alternance trouvée en hôtellerie grâce au groupe. L'équipe modère très bien, aucun spam.", rating: 5 },
+  { name: "Baptiste G.", avatar: "B", ville: "Montpellier", context: "Étudiant en biologie", text: "Studio meublé à 450€ à Montpellier, c'est rare ! Merci à la communauté pour ce bon plan.", rating: 5 },
+  { name: "Naomi F.", avatar: "N", ville: "Grenoble", context: "Étudiante en ingénierie", text: "J'ai trouvé une machine à laver et un frigo gratuits pour mon appart. Incroyable solidarité !", rating: 5 },
+  { name: "Rayan C.", avatar: "R", ville: "Toulouse", context: "Étudiant en marketing", text: "Groupe sérieux et bien modéré. J'ai trouvé mon stage de fin d'études en une semaine.", rating: 5 },
+  { name: "Emma D.", avatar: "E", ville: "Nantes", context: "Étudiante en design", text: "Mon MacBook vendu rapidement à un prix juste. La communauté est honnête et réactive.", rating: 5 },
+  { name: "Amine L.", avatar: "A", ville: "Paris", context: "Étudiant en finance", text: "Une alternance en banque trouvée via le groupe. Je recommande à tous les étudiants parisiens !", rating: 5 },
+  { name: "Chloé B.", avatar: "C", ville: "Lille", context: "Étudiante en ressources humaines", text: "Colocation trouvée avec des étudiants dans ma filière. Le groupe crée de vraies opportunités.", rating: 5 },
+  { name: "Samba T.", avatar: "S", ville: "Lyon", context: "Étudiant en économie", text: "J'ai récupéré un bureau et une chaise de bureau en excellent état. Parfait pour télétravailler !", rating: 5 },
+  { name: "Julie M.", avatar: "J", ville: "Bordeaux", context: "Étudiante en pharmacie", text: "Grâce à la communauté j'ai économisé plus de 300€ sur mes livres de première année. Merci !", rating: 5 },
+  { name: "Mehdi R.", avatar: "M", ville: "Strasbourg", context: "Étudiant en droit européen", text: "Job de serveur le week-end trouvé en 2 jours. La communauté est une vraie ressource étudiante.", rating: 5 },
 ];
 
 // FAQ Sécurité
@@ -184,6 +185,7 @@ export const NAV_ITEMS = [
   { label: "Logements", href: "/logements" },
   { label: "Dons", href: "/dons" },
   { label: "Offres", href: "/offres" },
+  { label: "Achat & Vente", href: "/achat-vente" },
   { label: "Notre équipe", href: "/equipe" },
   { label: "Contact", href: "/contact" },
 ];

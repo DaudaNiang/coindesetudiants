@@ -10,6 +10,7 @@ import { DonsPage } from "./pages/DonsPage";
 import { OffresPage } from "./pages/OffresPage";
 import { EquipePage } from "./pages/EquipePage";
 import { ContactPage } from "./pages/ContactPage";
+import { AchatVentePage } from "./pages/AchatVentePage";
 
 // Layout wrapper - conditionally renders footer
 const Layout = ({ children }) => {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/logements" element={<LogementsPage />} />
             <Route path="/dons" element={<DonsPage />} />
             <Route path="/offres" element={<OffresPage />} />
+            <Route path="/achat-vente" element={<AchatVentePage />} />
             <Route path="/equipe" element={<EquipePage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>

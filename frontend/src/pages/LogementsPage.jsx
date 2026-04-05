@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion';
-import { Home, MapPin, MessageCircle, ArrowRight, Shield, Zap, Target, Heart, Euro, CheckCircle } from 'lucide-react';
+import { Home, MessageCircle, ArrowRight, Shield, Zap, Target, Heart, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
-import { Input } from '../components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { ReassuranceBar } from '../components/ReassuranceBar';
-import { LINKS, DEMO_LOGEMENTS, FAQ_BAILLEURS } from '../config/constants';
+import { LINKS, FAQ_BAILLEURS } from '../config/constants';
 
 export const LogementsPage = () => {
   return (
@@ -51,77 +49,31 @@ export const LogementsPage = () => {
         </div>
       </section>
 
-      {/* Mock Filters */}
-      <section className="py-8 bg-[#F5F7FA]">
-        <div className="container-custom">
-          <div className="card p-4 flex flex-wrap gap-4 items-center justify-center">
-            <Select>
-              <SelectTrigger className="w-40 rounded-xl"><SelectValue placeholder="Ville" /></SelectTrigger>
-              <SelectContent>
-                <SelectItem value="paris">Paris</SelectItem>
-                <SelectItem value="lyon">Lyon</SelectItem>
-                <SelectItem value="bordeaux">Bordeaux</SelectItem>
-              </SelectContent>
-            </Select>
-            <Select>
-              <SelectTrigger className="w-40 rounded-xl"><SelectValue placeholder="Type" /></SelectTrigger>
-              <SelectContent>
-                <SelectItem value="studio">Studio</SelectItem>
-                <SelectItem value="colocation">Colocation</SelectItem>
-                <SelectItem value="chambre">Chambre</SelectItem>
-              </SelectContent>
-            </Select>
-            <Input placeholder="Budget max" className="w-32 rounded-xl" />
-          </div>
-        </div>
-      </section>
-
-      {/* Listings */}
-      <section className="section-spacing bg-white">
-        <div className="container-custom">
-          <h2 className="text-2xl font-bold text-[#0B1B2B] mb-8 text-center">
-            Aperçu des logements
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
-            {DEMO_LOGEMENTS.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="card overflow-hidden"
-              >
-                <img src={item.image} alt={item.type} className="w-full h-36 object-cover" />
-                <div className="p-4">
-                  <Badge className="badge-primary mb-2 text-xs">{item.type}</Badge>
-                  <div className="flex items-center gap-2 text-sm text-[#64748B] mb-1">
-                    <MapPin className="w-4 h-4" />
-                    {item.ville}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm mb-1">
-                    <Euro className="w-4 h-4 text-[#64748B]" />
-                    <span className="font-semibold text-[#1E5AA8]">{item.prix}</span>
-                  </div>
-                  <p className="text-xs text-[#64748B] mb-3">{item.surface} • {item.dispo}</p>
-                  <a href={LINKS.WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer">
-                    <Button size="sm" className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full text-xs">
-                      <MessageCircle className="w-3 h-3 mr-1" />
-                      Contact WhatsApp
-                    </Button>
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center">
+      {/* WhatsApp Redirect */}
+      <section className="section-spacing bg-[#F5F7FA]">
+        <div className="container-custom max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="card-premium p-10 text-center"
+          >
+            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#1E5AA8] to-[#3B82F6] flex items-center justify-center shadow-lg">
+              <Home className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-[#0B1B2B] mb-4">
+              Les annonces sont partagées directement dans notre groupe WhatsApp
+            </h2>
+            <p className="text-[#64748B] mb-8">
+              Studios, colocations, chambres chez l'habitant... Rejoins le groupe pour accéder à toutes les annonces en temps réel.
+            </p>
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-[#1E5AA8] hover:bg-[#164785] text-white rounded-full px-8 font-semibold">
+              <Button className="bg-gradient-to-r from-[#4CAF50] to-[#3D8B40] hover:from-[#3D8B40] hover:to-[#2E7D32] text-white rounded-full px-8 font-semibold shadow-lg shadow-green-500/25">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Voir toutes les annonces
+                Rejoindre le groupe
               </Button>
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 

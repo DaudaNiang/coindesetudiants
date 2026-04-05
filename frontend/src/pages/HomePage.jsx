@@ -1,18 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
-import { 
-  MessageCircle, ArrowRight, Home, Gift, Briefcase, Users, 
-  Shield, Heart, Star, MapPin, ChevronRight, CheckCircle, Euro,
-  Image, ChevronDown
+import {
+  MessageCircle, ArrowRight, Home, Gift, Briefcase, Users,
+  Shield, Heart, Star, ChevronRight, CheckCircle, ShoppingBag
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { ReassuranceBar } from '../components/ReassuranceBar';
 import { Footer } from '../components/Footer';
-import { LINKS, STATS, TESTIMONIALS, DEMO_LOGEMENTS, DEMO_DONS, DEMO_OFFRES, FAQ_SECURITE } from '../config/constants';
+import { LINKS, STATS, TESTIMONIALS, FAQ_SECURITE } from '../config/constants';
 
 // Hero Section
 const HeroSection = () => {
@@ -36,6 +34,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="order-2 lg:order-1"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0B1B2B] mb-6 leading-tight">
               La communauté qui{' '}
@@ -93,7 +92,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden lg:block"
+            className="hidden lg:block lg:order-2"
           >
             <div className="relative">
               {/* Premium Halo */}
@@ -151,17 +150,36 @@ const HeroSection = () => {
             </div>
           </motion.div>
           
-          {/* Floating Icons - Mobile (under content) */}
-          <div className="hero-floating-icons-mobile lg:hidden">
-            {floatingIcons.slice(0, 2).map((item) => (
-              <div key={item.label} className="hero-floating-icon">
-                <div className={`icon-wrapper bg-gradient-to-br ${item.color}`}>
-                  <item.icon className="w-4 h-4 text-white" />
-                </div>
-                <span className="icon-label text-xs">{item.label}</span>
-              </div>
-            ))}
-          </div>
+          {/* Photo + Icônes - Mobile only, en premier */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:hidden order-1 lg:order-2 mb-8"
+          >
+            <img
+              src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Étudiants"
+              className="rounded-2xl shadow-xl w-full object-cover max-h-72"
+            />
+            {/* Icônes en grille 2×2 sous la photo */}
+            <div className="grid grid-cols-2 gap-2 mt-4">
+              {floatingIcons.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 2.5 + index * 0.4, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
+                  className="hero-floating-icon"
+                  style={{ position: 'relative' }}
+                >
+                  <div className={`icon-wrapper bg-gradient-to-br ${item.color} shadow-lg`}>
+                    <item.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="icon-label text-xs">{item.label}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -174,6 +192,7 @@ const CategoriesSection = () => {
     { title: "Logements", desc: "Studios, colocations, chambres...", icon: Home, href: "/logements", count: "500+", gradient: "from-[#1E5AA8] to-[#3B82F6]" },
     { title: "Dons", desc: "Meubles, livres, électroménager...", icon: Gift, href: "/dons", count: "150+", gradient: "from-[#4CAF50] to-[#6BC66F]" },
     { title: "Opportunités", desc: "Stages, jobs, alternances...", icon: Briefcase, href: "/offres", count: "200+", gradient: "from-[#F59E0B] to-[#FBBF24]" },
+    { title: "Achat & Vente", desc: "High-tech, vêtements, meubles...", icon: ShoppingBag, href: "/achat-vente", count: "100+", gradient: "from-[#8B5CF6] to-[#A78BFA]" },
   ];
 
   return (
@@ -191,7 +210,7 @@ const CategoriesSection = () => {
           <p className="text-[#64748B] text-lg">Au même endroit, pour les étudiants.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((cat, index) => (
             <motion.div
               key={cat.title}
@@ -222,105 +241,6 @@ const CategoriesSection = () => {
     </section>
   );
 };
-
-// Community Preview with Tabs
-const CommunityPreviewSection = () => {
-  return (
-    <section data-testid="community-preview-section" className="section-spacing gradient-section-3">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
-            Aperçu de notre communauté
-          </h2>
-          <p className="text-[#64748B] text-lg">Des annonces réelles partagées par nos membres.</p>
-        </motion.div>
-
-        <Tabs defaultValue="logements" className="max-w-5xl mx-auto">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-10 bg-white p-1.5 rounded-full shadow-md">
-            <TabsTrigger value="logements" className="rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#1E5AA8] data-[state=active]:to-[#3B82F6] data-[state=active]:text-white data-[state=active]:shadow-lg font-semibold">
-              Logements
-            </TabsTrigger>
-            <TabsTrigger value="dons" className="rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#4CAF50] data-[state=active]:to-[#6BC66F] data-[state=active]:text-white data-[state=active]:shadow-lg font-semibold">
-              Dons
-            </TabsTrigger>
-            <TabsTrigger value="offres" className="rounded-full data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#F59E0B] data-[state=active]:to-[#FBBF24] data-[state=active]:text-white data-[state=active]:shadow-lg font-semibold">
-              Opportunités
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="logements">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {DEMO_LOGEMENTS.slice(0, 6).map((item, i) => (
-                <PreviewCard key={item.id} item={item} type="logement" index={i} />
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="dons">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {DEMO_DONS.slice(0, 6).map((item, i) => (
-                <PreviewCard key={item.id} item={item} type="don" index={i} />
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="offres">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {DEMO_OFFRES.slice(0, 6).map((item, i) => (
-                <PreviewCard key={item.id} item={item} type="offre" index={i} />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        <div className="text-center mt-10">
-          <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-gradient-to-r from-[#4CAF50] to-[#3D8B40] text-white rounded-full px-8 font-semibold shadow-lg shadow-green-500/25">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Voir tout sur WhatsApp
-            </Button>
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const PreviewCard = ({ item, type, index }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: index * 0.1 }}
-    className="card-premium overflow-hidden"
-  >
-    <img src={item.image} alt="" className="w-full h-40 object-cover" />
-    <div className="p-5">
-      <Badge className={`mb-3 ${type === 'logement' ? 'badge-primary' : type === 'don' ? 'badge-accent' : 'bg-amber-100 text-amber-700 border border-amber-200'}`}>
-        {item.type || item.categorie}
-      </Badge>
-      {item.titre && <p className="font-semibold text-[#0B1B2B] mb-2">{item.titre}</p>}
-      <div className="flex items-center gap-2 text-sm text-[#64748B] mb-1">
-        <MapPin className="w-4 h-4" />
-        {item.ville}
-      </div>
-      {item.prix && (
-        <div className="flex items-center gap-2 text-sm mb-3">
-          <Euro className="w-4 h-4 text-[#64748B]" />
-          <span className="font-bold text-[#1E5AA8]">{item.prix}</span>
-        </div>
-      )}
-      <a href={LINKS.WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer">
-        <Button size="sm" className="w-full bg-gradient-to-r from-[#4CAF50] to-[#3D8B40] text-white rounded-full text-sm font-semibold">
-          En savoir plus
-        </Button>
-      </a>
-    </div>
-  </motion.div>
-);
 
 // Stats Section - Now lower in the page
 const StatsSection = () => {
@@ -448,171 +368,56 @@ const SecuritySection = () => {
   );
 };
 
-// Testimonials
+// Testimonials — horizontal infinite scroll carousel
 const TestimonialsSection = () => {
-  return (
-    <section data-testid="testimonials-section" className="section-spacing gradient-section-3">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
-            Ce qu'ils disent de nous
-          </h2>
-        </motion.div>
+  // Duplicate for seamless loop
+  const items = [...TESTIMONIALS, ...TESTIMONIALS];
 
-        <div className="grid md:grid-cols-3 gap-8 mb-10">
-          {TESTIMONIALS.map((t, index) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
-              className="card-premium p-8"
-            >
-              <div className="flex gap-1 mb-5">
+  return (
+    <section data-testid="testimonials-section" className="section-spacing gradient-section-3 overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-12 container-custom"
+      >
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
+          Ce qu'ils disent de nous
+        </h2>
+        <p className="text-[#64748B] text-lg">+6000 étudiants nous font confiance</p>
+      </motion.div>
+
+      {/* Carousel track */}
+      <div className="relative">
+        {/* Gradient fades on edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#F5F7FA] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#F5F7FA] to-transparent z-10 pointer-events-none" />
+
+        <div className="testimonials-track">
+          {items.map((t, index) => (
+            <div key={index} className="testimonial-card-slide">
+              <div className="flex gap-1 mb-4">
                 {[...Array(t.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-[#0B1B2B] mb-6 text-lg italic leading-relaxed">"{t.text}"</p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E5AA8] to-[#4CAF50] flex items-center justify-center text-white font-bold text-lg">
+              <p className="text-[#0B1B2B] mb-5 text-sm leading-relaxed italic flex-1">"{t.text}"</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1E5AA8] to-[#4CAF50] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                   {t.avatar}
                 </div>
                 <div>
-                  <p className="font-bold text-[#0B1B2B]">{t.name}</p>
-                  <p className="text-sm text-[#64748B]">{t.context} — {t.ville}</p>
+                  <p className="font-bold text-[#0B1B2B] text-sm">{t.name}</p>
+                  <p className="text-xs text-[#64748B]">{t.context} — {t.ville}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-
-        <div className="text-center">
-          <ReassuranceBar />
-        </div>
       </div>
-    </section>
-  );
-};
 
-// Social Proof / WhatsApp Screenshots Section
-const SocialProofSection = () => {
-  const [showMore, setShowMore] = useState(false);
-  
-  // Placeholder data for screenshots (6 initial, 6 more on click)
-  const screenshots = [
-    { id: 1, image: null, label: "Retour bailleur Paris" },
-    { id: 2, image: null, label: "Mise en relation réussie" },
-    { id: 3, image: null, label: "Logement trouvé Lyon" },
-    { id: 4, image: null, label: "Retour propriétaire" },
-    { id: 5, image: null, label: "Témoignage Bordeaux" },
-    { id: 6, image: null, label: "Remerciement bailleur" },
-    { id: 7, image: null, label: "Colocation Lille" },
-    { id: 8, image: null, label: "Feedback positif" },
-    { id: 9, image: null, label: "Logement Toulouse" },
-    { id: 10, image: null, label: "Retour satisfaction" },
-    { id: 11, image: null, label: "Mise en relation" },
-    { id: 12, image: null, label: "Témoignage Nantes" },
-  ];
-
-  const visibleScreenshots = showMore ? screenshots : screenshots.slice(0, 6);
-
-  return (
-    <section data-testid="social-proof-section" className="py-20 relative z-10">
-      <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="social-proof-container"
-        >
-          {/* Header */}
-          <div className="text-center mb-10">
-            {/* Badges */}
-            <div className="flex flex-wrap justify-center gap-3 mb-6">
-              <span className="social-proof-badge">
-                <Shield className="w-3.5 h-3.5" />
-                Communauté modérée
-              </span>
-              <span className="social-proof-badge">
-                <Users className="w-3.5 h-3.5" />
-                +6000 étudiants
-              </span>
-              <span className="social-proof-badge">
-                <MessageCircle className="w-3.5 h-3.5" />
-                Réponse rapide via WhatsApp
-              </span>
-            </div>
-
-            {/* Title */}
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Ce que nos{' '}
-              <span className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] bg-clip-text text-transparent">
-                bailleurs
-              </span>{' '}
-              disent de nous
-            </h2>
-            
-            {/* Subtitle */}
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Des retours réels partagés sur WhatsApp : sérieux, réactivité et mises en relation rapides.
-            </p>
-          </div>
-
-          {/* Screenshots Grid */}
-          <div className="screenshots-grid mb-10">
-            {visibleScreenshots.map((screenshot, index) => (
-              <motion.div
-                key={screenshot.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="whatsapp-screenshot-card"
-                data-testid={`screenshot-card-${screenshot.id}`}
-              >
-                {screenshot.image ? (
-                  <img src={screenshot.image} alt={screenshot.label} />
-                ) : (
-                  <div className="screenshot-placeholder">
-                    <div className="screenshot-placeholder-icon">
-                      <Image className="w-6 h-6 text-white/30" />
-                    </div>
-                    <p className="screenshot-placeholder-text">
-                      Capture WhatsApp
-                    </p>
-                    <p className="screenshot-placeholder-subtext">
-                      {screenshot.label}
-                    </p>
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Load More Button */}
-          <div className="text-center">
-            <button
-              onClick={() => setShowMore(!showMore)}
-              className="social-proof-btn inline-flex items-center gap-2"
-              data-testid="show-more-testimonials-btn"
-            >
-              {showMore ? 'Afficher moins' : 'Afficher plus de témoignages'}
-              <ChevronDown className={`w-5 h-5 transition-transform ${showMore ? 'rotate-180' : ''}`} />
-            </button>
-          </div>
-
-          {/* Legal Note */}
-          <p className="text-center text-white/40 text-xs mt-8">
-            Les captures sont des retours authentiques. Aucun résultat n'est garanti.
-          </p>
-        </motion.div>
+      <div className="text-center mt-10 container-custom">
+        <ReassuranceBar />
       </div>
     </section>
   );
@@ -671,14 +476,12 @@ export const HomePage = () => {
     <div data-testid="home-page">
       <HeroSection />
       <CategoriesSection />
-      <CommunityPreviewSection />
       <StatsSection />
       <SecuritySection />
       <TestimonialsSection />
-      
-      {/* Dark Premium Wrapper - Continuous background from Social Proof to Footer */}
+
+      {/* Dark Premium Wrapper */}
       <div className="dark-premium-wrapper">
-        <SocialProofSection />
         <FinalCTASection />
         <Footer variant="embedded" />
       </div>
