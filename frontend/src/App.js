@@ -5,6 +5,7 @@ import { Toaster } from "./components/ui/sonner";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const HomePage = lazy(() => import("./pages/HomePage").then(m => ({ default: m.HomePage })));
 const LogementsPage = lazy(() => import("./pages/LogementsPage").then(m => ({ default: m.LogementsPage })));
@@ -37,6 +38,7 @@ function App() {
     <div className="App">
       <Toaster position="top-center" richColors />
       <BrowserRouter>
+        <ScrollToTop />
         <Layout>
           <Suspense fallback={<div className="min-h-screen" />}>
             <Routes>
