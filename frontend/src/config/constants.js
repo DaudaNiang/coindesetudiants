@@ -53,7 +53,7 @@ export const TEAM = [
       "Modération, animation et qualité des échanges",
       "Relations terrain (étudiants, associations)"
     ],
-    image: "https://customer-assets.emergentagent.com/job_coin-demo/artifacts/m6z11kp6_image.png",
+    image: "/images/bassine.png",
   },
 ];
 
