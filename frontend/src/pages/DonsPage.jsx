@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import { Gift, MapPin, MessageCircle, ArrowRight, Sofa, BookOpen, Tv, Shirt, Pencil, Heart, Recycle, PiggyBank } from 'lucide-react';
+import { Gift, MessageCircle, ArrowRight, Sofa, BookOpen, Tv, Shirt, Pencil, Heart, Recycle, PiggyBank } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { ReassuranceBar } from '../components/ReassuranceBar';
-import { LINKS, DEMO_DONS, DON_CATEGORIES } from '../config/constants';
+import { WhatsAppProofSection } from '../components/WhatsAppProofSection';
+import { LINKS, DON_CATEGORIES } from '../config/constants';
 
 const iconMap = { Sofa, BookOpen, Tv, Shirt, Pencil };
 
@@ -38,8 +39,8 @@ export const DonsPage = () => {
               </div>
               <ReassuranceBar />
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="hidden lg:block">
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" alt="Don" className="rounded-2xl shadow-xl" />
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="order-first lg:order-last">
+              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" alt="Don" className="rounded-2xl shadow-xl w-full max-h-64 lg:max-h-none object-cover" />
             </motion.div>
           </div>
         </div>
@@ -66,50 +67,31 @@ export const DonsPage = () => {
         </div>
       </section>
 
-      {/* Listings */}
+      {/* WhatsApp Redirect */}
       <section className="section-spacing bg-white">
-        <div className="container-custom">
-          <h2 className="text-2xl font-bold text-[#0B1B2B] mb-8 text-center">Aperçu des dons disponibles</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
-            {DEMO_DONS.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="card overflow-hidden"
-              >
-                <img src={item.image} alt={item.titre} className="w-full h-36 object-cover" />
-                <div className="p-4">
-                  <div className="flex gap-2 mb-2">
-                    <Badge className="badge-accent text-xs">{item.categorie}</Badge>
-                    <Badge className="bg-green-100 text-green-700 text-xs">Gratuit</Badge>
-                  </div>
-                  <h3 className="font-semibold text-[#0B1B2B] text-sm mb-1">{item.titre}</h3>
-                  <div className="flex items-center gap-2 text-xs text-[#64748B] mb-1">
-                    <MapPin className="w-3 h-3" />
-                    {item.ville}
-                  </div>
-                  <p className="text-xs text-[#64748B] mb-3">{item.etat}</p>
-                  <a href={LINKS.WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer">
-                    <Button size="sm" className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full text-xs">
-                      <MessageCircle className="w-3 h-3 mr-1" />
-                      Réserver sur WhatsApp
-                    </Button>
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center">
+        <div className="container-custom max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="card-premium p-10 text-center"
+          >
+            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#4CAF50] to-[#3D8B40] flex items-center justify-center shadow-lg">
+              <Gift className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-[#0B1B2B] mb-4">
+              Les dons disponibles sont publiés dans notre groupe WhatsApp
+            </h2>
+            <p className="text-[#64748B] mb-8">
+              Meubles, livres, électroménager, vêtements... Rejoins le groupe pour voir les dons disponibles et en proposer à ton tour.
+            </p>
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full px-8 font-semibold">
+              <Button className="bg-gradient-to-r from-[#4CAF50] to-[#3D8B40] hover:from-[#3D8B40] hover:to-[#2E7D32] text-white rounded-full px-8 font-semibold shadow-lg shadow-green-500/25">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Voir tous les dons
+                Voir les dons
               </Button>
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -120,7 +102,7 @@ export const DonsPage = () => {
             <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#4CAF50] flex items-center justify-center">
               <Heart className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-3xl font-bold text-[#0B1B2B] mb-4">+150 dons réalisés</h2>
+            <h2 className="text-3xl font-bold text-[#0B1B2B] mb-4">+200 dons réalisés</h2>
             
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               <div className="card p-4">
@@ -151,6 +133,18 @@ export const DonsPage = () => {
           </motion.div>
         </div>
       </section>
+
+      <WhatsAppProofSection
+        title="Entraide réelle"
+        titleAccent="dans notre groupe"
+        subtitle="Des dons partagés directement par nos membres — solidarité étudiante en action."
+        items={[
+          { src: '/images/proof/don-1.png', label: 'Don entre étudiants' },
+          { src: '/images/proof/don-2.png', label: 'Don entre étudiants' },
+          { src: '/images/proof/don-3.png', label: 'Don entre étudiants' },
+        ]}
+        legal="Les captures sont des retours authentiques. Aucun résultat n'est garanti."
+      />
     </div>
   );
 };

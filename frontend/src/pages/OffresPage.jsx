@@ -1,43 +1,12 @@
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, MessageCircle, ArrowRight, Users, Target, Zap, Award, Clock, CheckCircle } from 'lucide-react';
+import { Briefcase, MessageCircle, ArrowRight, Users, Target, Zap, Award, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { ReassuranceBar } from '../components/ReassuranceBar';
-import { LINKS, DEMO_OFFRES } from '../config/constants';
+import { WhatsAppProofSection } from '../components/WhatsAppProofSection';
+import { LINKS } from '../config/constants';
 
 export const OffresPage = () => {
-  const stages = DEMO_OFFRES.filter(o => o.type === 'Stage');
-  const alternances = DEMO_OFFRES.filter(o => o.type === 'Alternance');
-  const jobs = DEMO_OFFRES.filter(o => o.type === 'Job étudiant');
-
-  const OffreCard = ({ item }) => (
-    <div className="card overflow-hidden">
-      <img src={item.image} alt={item.titre} className="w-full h-32 object-cover" />
-      <div className="p-4">
-        <div className="flex gap-2 mb-2">
-          <Badge className={`text-xs ${
-            item.type === 'Stage' ? 'bg-amber-100 text-amber-700' :
-            item.type === 'Alternance' ? 'bg-blue-100 text-blue-700' :
-            'bg-green-100 text-green-700'
-          }`}>{item.type}</Badge>
-          <Badge variant="outline" className="text-xs">{item.domaine}</Badge>
-        </div>
-        <h3 className="font-semibold text-[#0B1B2B] text-sm mb-1">{item.titre}</h3>
-        <div className="flex items-center gap-3 text-xs text-[#64748B] mb-3">
-          <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{item.ville}</span>
-          <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{item.duree}</span>
-        </div>
-        <a href={LINKS.WHATSAPP_CHANNEL} target="_blank" rel="noopener noreferrer">
-          <Button size="sm" className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full text-xs">
-            <MessageCircle className="w-3 h-3 mr-1" />
-            Postuler via WhatsApp
-          </Button>
-        </a>
-      </div>
-    </div>
-  );
-
   return (
     <div data-testid="offres-page" className="pt-20">
       {/* Hero */}
@@ -68,56 +37,38 @@ export const OffresPage = () => {
               </div>
               <ReassuranceBar />
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="hidden lg:block">
-              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Travail" className="rounded-2xl shadow-xl" />
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="order-first lg:order-last">
+              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Travail" className="rounded-2xl shadow-xl w-full max-h-64 lg:max-h-none object-cover" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Tabs */}
+      {/* WhatsApp Redirect */}
       <section className="section-spacing bg-[#F5F7FA]">
-        <div className="container-custom">
-          <h2 className="text-2xl font-bold text-[#0B1B2B] mb-8 text-center">Aperçu des opportunités</h2>
-          
-          <Tabs defaultValue="all" className="max-w-5xl mx-auto">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-4 mb-8 bg-white p-1 rounded-full">
-              <TabsTrigger value="all" className="rounded-full data-[state=active]:bg-[#1E5AA8] data-[state=active]:text-white text-sm">Tout</TabsTrigger>
-              <TabsTrigger value="stage" className="rounded-full data-[state=active]:bg-amber-500 data-[state=active]:text-white text-sm">Stages</TabsTrigger>
-              <TabsTrigger value="alternance" className="rounded-full data-[state=active]:bg-blue-500 data-[state=active]:text-white text-sm">Alternances</TabsTrigger>
-              <TabsTrigger value="job" className="rounded-full data-[state=active]:bg-green-500 data-[state=active]:text-white text-sm">Jobs</TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="all">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                {DEMO_OFFRES.map((item) => <OffreCard key={item.id} item={item} />)}
-              </div>
-            </TabsContent>
-            <TabsContent value="stage">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {stages.map((item) => <OffreCard key={item.id} item={item} />)}
-              </div>
-            </TabsContent>
-            <TabsContent value="alternance">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {alternances.map((item) => <OffreCard key={item.id} item={item} />)}
-              </div>
-            </TabsContent>
-            <TabsContent value="job">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {jobs.map((item) => <OffreCard key={item.id} item={item} />)}
-              </div>
-            </TabsContent>
-          </Tabs>
-
-          <div className="text-center mt-8">
+        <div className="container-custom max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="card-premium p-10 text-center"
+          >
+            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#F59E0B] to-[#FBBF24] flex items-center justify-center shadow-lg">
+              <Briefcase className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-[#0B1B2B] mb-4">
+              Les offres sont publiées directement dans notre groupe WhatsApp
+            </h2>
+            <p className="text-[#64748B] mb-8">
+              Stages, alternances, jobs étudiants... Rejoins le groupe pour accéder aux opportunités partagées par la communauté.
+            </p>
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-amber-500 hover:bg-amber-600 text-white rounded-full px-8 font-semibold">
+              <Button className="bg-gradient-to-r from-[#F59E0B] to-[#D97706] hover:from-[#D97706] hover:to-[#B45309] text-white rounded-full px-8 font-semibold shadow-lg shadow-amber-500/25">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Voir toutes les offres
+                Voir les offres
               </Button>
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -133,7 +84,7 @@ export const OffresPage = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {[
-              { icon: Users, title: "Accès direct", desc: "+6000 étudiants actifs" },
+              { icon: Users, title: "Accès direct", desc: "+10 000 étudiants actifs" },
               { icon: Zap, title: "Publication simple", desc: "Formulaire rapide" },
               { icon: Target, title: "Ciblage précis", desc: "Par ville et domaine" },
               { icon: Award, title: "Image positive", desc: "Engagement étudiant" },
@@ -176,6 +127,16 @@ export const OffresPage = () => {
           </div>
         </div>
       </section>
+
+      <WhatsAppProofSection
+        title="Des opportunités"
+        titleAccent="partagées en direct"
+        subtitle="Stages, jobs, alternances — des offres relayées par la communauté pour les étudiants."
+        items={[
+          { src: '/images/proof/services-1.png', label: 'Opportunité partagée dans le groupe' },
+        ]}
+        legal="Les captures sont des retours authentiques. Aucun résultat n'est garanti."
+      />
     </div>
   );
 };

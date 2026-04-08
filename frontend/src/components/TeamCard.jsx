@@ -49,7 +49,7 @@ export const TeamCard = ({ member, index }) => {
           
           {/* Badge */}
           <div className="team-card-badge">
-            {member.isFounder ? 'Fondateur' : 'Co-fondateur'}
+            {member.badge || (member.isFounder ? 'Fondateur' : 'Co-fondateur')}
           </div>
           
           {/* Name & Role */}
