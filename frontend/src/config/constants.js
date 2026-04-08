@@ -1,14 +1,16 @@
 // Configuration des liens
 export const LINKS = {
-  WHATSAPP_GROUP: "https://chat.whatsapp.com/FmMwTvOaM2aJI98FShbLnC?mode=ac_t",
-  WHATSAPP_CHANNEL: "https://whatsapp.com/channel/0029VbAwDzD8fewrz5ocLE03",
-  PUBLIER: "https://forms.gle/2pWASyBzMzGDAZKYA",
-  PROPOSER_LOGEMENT: "https://forms.gle/2pWASyBzMzGDAZKYA",
-  PUBLIER_OFFRE: "https://forms.gle/2pWASyBzMzGDAZKYA",
+  WHATSAPP_GROUP: "https://whatsapp.com/channel/0029VbAwDzD8fewrz5ocLE03",
+  WHATSAPP_CONTACT: "https://wa.me/33746444913",
+  PUBLIER: "https://docs.google.com/forms/d/e/1FAIpQLSf4XQk94t2n5fawvOB7JFMzKwZzsFoVEqibHngnTmk-hvGk8A/viewform",
+  PROPOSER_LOGEMENT: "https://docs.google.com/forms/d/e/1FAIpQLSf4XQk94t2n5fawvOB7JFMzKwZzsFoVEqibHngnTmk-hvGk8A/viewform",
+  PUBLIER_OFFRE: "https://docs.google.com/forms/d/e/1FAIpQLSf4XQk94t2n5fawvOB7JFMzKwZzsFoVEqibHngnTmk-hvGk8A/viewform",
   INSTAGRAM: "https://www.instagram.com/coin_des_etudiants/",
   LINKEDIN: "https://www.linkedin.com/company/coin-des-etudiants/",
   TIKTOK: "https://www.tiktok.com/@coindesetudiants",
   EMAIL: "mailto:coindesetudiants@gmail.com",
+  EMAIL_DISPLAY: "coindesetudiants@gmail.com",
+  PHONE: "+33 7 46 44 49 13",
 };
 
 // Équipe - Ordre : Dauda (gauche), Cheikh (centre), Bassine (droite)
@@ -63,16 +65,17 @@ export const COMPANY_STORY = {
   vision: "Créer une alternative étudiante, simple, fiable et solidaire.",
   timeline: [
     { year: "2024", event: "Création de la communauté WhatsApp" },
-    { year: "2025", event: "Lancement officiel + 6000 membres" },
+    { year: "2025", event: "Lancement officiel + 10 000 membres" },
   ]
 };
 
 // Statistiques harmonisées
 export const STATS = [
-  { label: "Étudiants actifs", value: 6000, suffix: "+" },
-  { label: "Logements proposés", value: 500, suffix: "+" },
-  { label: "Dons réalisés", value: 150, suffix: "+" },
-  { label: "Opportunités partagées", value: 200, suffix: "+" },
+  { label: "Membres actifs", value: 10000, suffix: "+" },
+  { label: "Logements publiés", value: 1000, suffix: "+" },
+  { label: "Dons réalisés", value: 200, suffix: "+" },
+  { label: "Jobs & stages", value: 500, suffix: "+" },
+  { label: "Achats & ventes", value: 100, suffix: "+" },
 ];
 
 // Logements avec photos réalistes
@@ -167,7 +170,7 @@ export const FAQ_BAILLEURS = [
   },
   {
     question: "Comment publier mon annonce ?",
-    answer: "Remplissez le formulaire avec les détails de votre bien. Votre annonce sera diffusée à +6000 étudiants.",
+    answer: "Remplissez le formulaire avec les détails de votre bien. Votre annonce sera diffusée à +10 000 étudiants.",
   },
   {
     question: "Est-ce payant ?",

@@ -3,6 +3,7 @@ import { ShoppingBag, MessageCircle, ArrowRight, Shield, Zap, Heart, CheckCircle
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { ReassuranceBar } from '../components/ReassuranceBar';
+import { WhatsAppProofSection } from '../components/WhatsAppProofSection';
 import { LINKS } from '../config/constants';
 
 const categories = [
@@ -52,11 +53,11 @@ export const AchatVentePage = () => {
               <ReassuranceBar />
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="hidden lg:block">
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="order-first lg:order-last">
               <img
                 src="https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Achat et vente entre étudiants"
-                className="rounded-2xl shadow-xl w-full object-cover"
+                className="rounded-2xl shadow-xl w-full max-h-64 lg:max-h-none object-cover"
               />
             </motion.div>
           </div>
@@ -135,7 +136,7 @@ export const AchatVentePage = () => {
 
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
             {[
-              { icon: Shield, title: "Communauté de confiance", desc: "+6000 étudiants vérifiés, modération active" },
+              { icon: Shield, title: "Communauté de confiance", desc: "+10 000 étudiants vérifiés, modération active" },
               { icon: Zap, title: "Transactions rapides", desc: "WhatsApp pour contacter directement le vendeur" },
               { icon: Heart, title: "Prix étudiants", desc: "Des tarifs adaptés aux budgets serrés" },
               { icon: CheckCircle, title: "Zéro commission", desc: "100% gratuit, aucun frais sur les transactions" },
@@ -179,6 +180,16 @@ export const AchatVentePage = () => {
           </div>
         </div>
       </section>
+
+      <WhatsAppProofSection
+        title="Achats & ventes"
+        titleAccent="entre étudiants"
+        subtitle="Des transactions réelles entre membres — rapides, simples et sans commission."
+        items={[
+          { src: '/images/proof/achat-vente-1.png', label: 'Échange entre étudiants' },
+        ]}
+        legal="Les captures sont des retours authentiques. Aucun résultat n'est garanti."
+      />
     </div>
   );
 };

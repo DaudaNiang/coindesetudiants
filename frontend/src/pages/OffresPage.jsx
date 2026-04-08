@@ -3,6 +3,7 @@ import { Briefcase, MessageCircle, ArrowRight, Users, Target, Zap, Award, CheckC
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { ReassuranceBar } from '../components/ReassuranceBar';
+import { WhatsAppProofSection } from '../components/WhatsAppProofSection';
 import { LINKS } from '../config/constants';
 
 export const OffresPage = () => {
@@ -36,8 +37,8 @@ export const OffresPage = () => {
               </div>
               <ReassuranceBar />
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="hidden lg:block">
-              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Travail" className="rounded-2xl shadow-xl" />
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="order-first lg:order-last">
+              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Travail" className="rounded-2xl shadow-xl w-full max-h-64 lg:max-h-none object-cover" />
             </motion.div>
           </div>
         </div>
@@ -83,7 +84,7 @@ export const OffresPage = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {[
-              { icon: Users, title: "Accès direct", desc: "+6000 étudiants actifs" },
+              { icon: Users, title: "Accès direct", desc: "+10 000 étudiants actifs" },
               { icon: Zap, title: "Publication simple", desc: "Formulaire rapide" },
               { icon: Target, title: "Ciblage précis", desc: "Par ville et domaine" },
               { icon: Award, title: "Image positive", desc: "Engagement étudiant" },
@@ -126,6 +127,16 @@ export const OffresPage = () => {
           </div>
         </div>
       </section>
+
+      <WhatsAppProofSection
+        title="Des opportunités"
+        titleAccent="partagées en direct"
+        subtitle="Stages, jobs, alternances — des offres relayées par la communauté pour les étudiants."
+        items={[
+          { src: '/images/proof/services-1.png', label: 'Opportunité partagée dans le groupe' },
+        ]}
+        legal="Les captures sont des retours authentiques. Aucun résultat n'est garanti."
+      />
     </div>
   );
 };

@@ -62,7 +62,7 @@ export const EquipePage = () => {
                 </h3>
                 <p className="text-sm text-[#64748B]">{COMPANY_STORY.solution}</p>
               </div>
-              <div className="card p-6 bg-gradient-to-br from-[#1E5AA8] to-[#4CAF50]">
+              <div className="card p-6" style={{ background: 'linear-gradient(135deg, #1E5AA8 0%, #4CAF50 100%)' }}>
                 <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
                   <Rocket className="w-5 h-5" />
                   Notre vision
@@ -133,11 +133,127 @@ export const EquipePage = () => {
         </div>
       </section>
 
+      {/* Partners */}
+      <section className="section-spacing overflow-hidden" style={{ background: 'linear-gradient(160deg, #f0f7ff 0%, #ffffff 50%, #f0fff4 100%)' }}>
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
+              Nos <span className="gradient-text">partenaires</span>
+            </h2>
+            <p className="text-[#64748B] text-lg max-w-xl mx-auto">
+              Des structures qui nous font confiance et soutiennent notre mission étudiante.
+            </p>
+          </motion.div>
+
+          {/* Desktop: image + 5 floating badges */}
+          <div className="relative min-h-[560px] hidden md:flex items-center justify-center">
+
+            {/* Haut gauche — Pépite Paris Ouest Nord */}
+            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0 }} className="absolute top-8 left-2 lg:left-10 z-10">
+              <div className="rounded-2xl px-4 py-3 shadow-lg text-center" style={{ background: 'linear-gradient(135deg, #1E5AA822, #1E5AA811)', border: '2px solid #1E5AA844', backdropFilter: 'blur(8px)', minWidth: '132px' }}>
+                <div className="w-9 h-9 rounded-xl mx-auto mb-1.5 flex items-center justify-center text-white text-sm font-bold" style={{ background: 'linear-gradient(135deg, #1E5AA8, #1E5AA8cc)' }}>P</div>
+                <p className="text-xs font-bold leading-tight" style={{ color: '#1E5AA8' }}>Pépite Paris<br/>Ouest Nord</p>
+              </div>
+            </motion.div>
+
+            {/* Haut centre — iEngage */}
+            <div className="absolute top-0 z-10" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+              <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
+                <div className="rounded-2xl px-4 py-3 shadow-lg text-center" style={{ background: 'linear-gradient(135deg, #4CAF5022, #4CAF5011)', border: '2px solid #4CAF5044', backdropFilter: 'blur(8px)', minWidth: '132px' }}>
+                  <div className="w-9 h-9 rounded-xl mx-auto mb-1.5 flex items-center justify-center text-white text-sm font-bold" style={{ background: 'linear-gradient(135deg, #4CAF50, #4CAF50cc)' }}>i</div>
+                  <p className="text-xs font-bold leading-tight" style={{ color: '#4CAF50' }}>iEngage</p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Haut droite — Université Paris 8 */}
+            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute top-8 right-2 lg:right-10 z-10">
+              <div className="rounded-2xl px-4 py-3 shadow-lg text-center" style={{ background: 'linear-gradient(135deg, #0097b222, #0097b211)', border: '2px solid #0097b244', backdropFilter: 'blur(8px)', minWidth: '132px' }}>
+                <div className="w-9 h-9 rounded-xl mx-auto mb-1.5 flex items-center justify-center text-white text-sm font-bold" style={{ background: 'linear-gradient(135deg, #0097b2, #0097b2cc)' }}>U</div>
+                <p className="text-xs font-bold leading-tight" style={{ color: '#0097b2' }}>Université<br/>Paris 8</p>
+              </div>
+            </motion.div>
+
+            {/* Bas gauche — Union étudiante Angers */}
+            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.2 }} className="absolute bottom-8 left-2 lg:left-10 z-10">
+              <div className="rounded-2xl px-4 py-3 shadow-lg text-center" style={{ background: 'linear-gradient(135deg, #F59E0B22, #F59E0B11)', border: '2px solid #F59E0B44', backdropFilter: 'blur(8px)', minWidth: '132px' }}>
+                <div className="w-9 h-9 rounded-xl mx-auto mb-1.5 flex items-center justify-center text-white text-sm font-bold" style={{ background: 'linear-gradient(135deg, #F59E0B, #F59E0Bcc)' }}>U</div>
+                <p className="text-xs font-bold leading-tight" style={{ color: '#F59E0B' }}>Union étudiante<br/>Angers</p>
+              </div>
+            </motion.div>
+
+            {/* Bas droite — IUT Montreuil */}
+            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4.4, repeat: Infinity, ease: "easeInOut", delay: 1.8 }} className="absolute bottom-8 right-2 lg:right-10 z-10">
+              <div className="rounded-2xl px-4 py-3 shadow-lg text-center" style={{ background: 'linear-gradient(135deg, #8B5CF622, #8B5CF611)', border: '2px solid #8B5CF644', backdropFilter: 'blur(8px)', minWidth: '132px' }}>
+                <div className="w-9 h-9 rounded-xl mx-auto mb-1.5 flex items-center justify-center text-white text-sm font-bold" style={{ background: 'linear-gradient(135deg, #8B5CF6, #8B5CF6cc)' }}>I</div>
+                <p className="text-xs font-bold leading-tight" style={{ color: '#8B5CF6' }}>IUT Montreuil</p>
+              </div>
+            </motion.div>
+
+            {/* Image centrée */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative z-20 w-full max-w-sm"
+            >
+              <div className="rounded-3xl overflow-hidden bg-white p-8 shadow-2xl" style={{ border: '1.5px solid #e2e8f0' }}>
+                <img src="/images/partenaires.png" alt="Nos partenaires" className="w-full h-auto object-contain" loading="lazy" />
+              </div>
+              <div className="absolute inset-0 rounded-3xl -z-10 blur-3xl opacity-15" style={{ background: 'linear-gradient(135deg, #1E5AA8, #4CAF50)' }} />
+            </motion.div>
+          </div>
+
+          {/* Mobile: image + badges en grille */}
+          <div className="md:hidden">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative w-full max-w-xs mx-auto mb-8"
+            >
+              <div className="rounded-3xl overflow-hidden bg-white p-6 shadow-xl" style={{ border: '1.5px solid #e2e8f0' }}>
+                <img src="/images/partenaires.png" alt="Nos partenaires" className="w-full h-auto object-contain" loading="lazy" />
+              </div>
+            </motion.div>
+
+            <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
+              {[
+                { label: "Pépite Paris Ouest Nord", icon: "P", sub: "Incubateur", color: "#1E5AA8" },
+                { label: "iEngage", icon: "i", sub: "Association étudiante", color: "#4CAF50" },
+                { label: "Union étudiante Angers", icon: "U", sub: "Union étudiante", color: "#F59E0B" },
+                { label: "Université Paris 8", icon: "U", sub: "Établissement partenaire", color: "#0097b2" },
+                { label: "IUT Montreuil", icon: "I", sub: "Établissement partenaire", color: "#8B5CF6" },
+              ].map((badge, i) => (
+                <motion.div
+                  key={badge.label}
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+                  className={i === 4 ? 'col-span-2 flex justify-center' : ''}
+                >
+                  <div className="rounded-2xl px-3 py-3 shadow text-center w-full" style={{ background: `linear-gradient(135deg, ${badge.color}18, ${badge.color}08)`, border: `1.5px solid ${badge.color}33` }}>
+                    <div className="w-8 h-8 rounded-xl mx-auto mb-1 flex items-center justify-center text-white text-sm font-bold" style={{ background: badge.color }}>{badge.icon}</div>
+                    <p className="text-xs font-bold leading-tight" style={{ color: badge.color }}>{badge.label}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-gradient-to-br from-[#1E5AA8] to-[#164785]">
         <div className="container-custom text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Rejoins notre communauté</h2>
-          <p className="text-white/80 mb-6">+6000 étudiants t'attendent</p>
+          <p className="text-white/80 mb-6">+10 000 étudiants t'attendent</p>
           <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
             <Button className="bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full px-8 font-semibold">
               <MessageCircle className="w-5 h-5 mr-2" />

@@ -3,6 +3,7 @@ import { Gift, MessageCircle, ArrowRight, Sofa, BookOpen, Tv, Shirt, Pencil, Hea
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { ReassuranceBar } from '../components/ReassuranceBar';
+import { WhatsAppProofSection } from '../components/WhatsAppProofSection';
 import { LINKS, DON_CATEGORIES } from '../config/constants';
 
 const iconMap = { Sofa, BookOpen, Tv, Shirt, Pencil };
@@ -38,8 +39,8 @@ export const DonsPage = () => {
               </div>
               <ReassuranceBar />
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="hidden lg:block">
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" alt="Don" className="rounded-2xl shadow-xl" />
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="order-first lg:order-last">
+              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" alt="Don" className="rounded-2xl shadow-xl w-full max-h-64 lg:max-h-none object-cover" />
             </motion.div>
           </div>
         </div>
@@ -101,7 +102,7 @@ export const DonsPage = () => {
             <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#4CAF50] flex items-center justify-center">
               <Heart className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-3xl font-bold text-[#0B1B2B] mb-4">+150 dons réalisés</h2>
+            <h2 className="text-3xl font-bold text-[#0B1B2B] mb-4">+200 dons réalisés</h2>
             
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               <div className="card p-4">
@@ -132,6 +133,18 @@ export const DonsPage = () => {
           </motion.div>
         </div>
       </section>
+
+      <WhatsAppProofSection
+        title="Entraide réelle"
+        titleAccent="dans notre groupe"
+        subtitle="Des dons partagés directement par nos membres — solidarité étudiante en action."
+        items={[
+          { src: '/images/proof/don-1.png', label: 'Don entre étudiants' },
+          { src: '/images/proof/don-2.png', label: 'Don entre étudiants' },
+          { src: '/images/proof/don-3.png', label: 'Don entre étudiants' },
+        ]}
+        legal="Les captures sont des retours authentiques. Aucun résultat n'est garanti."
+      />
     </div>
   );
 };

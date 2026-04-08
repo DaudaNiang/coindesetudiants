@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, MapPin, Instagram, Linkedin } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Instagram, Linkedin, Phone } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -174,21 +174,53 @@ ${formData.message}`;
 
             {/* Right column */}
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6">
-              {/* WhatsApp priority */}
-              <div className="card p-6 bg-gradient-to-br from-[#4CAF50]/10 to-[#4CAF50]/5 border-2 border-[#4CAF50]/20">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#4CAF50] flex items-center justify-center">
+              {/* Contact direct — priorité WhatsApp */}
+              <div className="card p-6" style={{ background: 'linear-gradient(135deg, rgba(76,175,80,0.08) 0%, rgba(76,175,80,0.03) 100%)', border: '2px solid rgba(76,175,80,0.2)' }}>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-[#4CAF50] flex items-center justify-center flex-shrink-0">
                     <MessageCircle className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0B1B2B]">Réponse plus rapide ?</h3>
-                    <p className="text-sm text-[#64748B]">WhatsApp est prioritaire</p>
+                    <h3 className="font-bold text-[#0B1B2B]">Contact direct</h3>
+                    <p className="text-sm text-[#64748B]">Réponse rapide garantie</p>
                   </div>
                 </div>
-                <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
+
+                {/* Coordonnées */}
+                <div className="space-y-3 mb-5">
+                  <a
+                    href={LINKS.WHATSAPP_CONTACT}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-[#4CAF50]/5 transition-colors border border-[#4CAF50]/15"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-[#4CAF50] flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[#64748B] font-medium uppercase tracking-wide">WhatsApp</p>
+                      <p className="font-semibold text-[#0B1B2B] text-sm">{LINKS.PHONE}</p>
+                    </div>
+                  </a>
+
+                  <a
+                    href={LINKS.EMAIL}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-[#1E5AA8]/5 transition-colors border border-[#1E5AA8]/15"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-[#1E5AA8] flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[#64748B] font-medium uppercase tracking-wide">Email</p>
+                      <p className="font-semibold text-[#0B1B2B] text-sm">{LINKS.EMAIL_DISPLAY}</p>
+                    </div>
+                  </a>
+                </div>
+
+                <a href={LINKS.WHATSAPP_CONTACT} target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-[#4CAF50] hover:bg-[#3D8B40] text-white rounded-full font-semibold">
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    Ouvrir WhatsApp
+                    Nous écrire sur WhatsApp
                   </Button>
                 </a>
               </div>
@@ -230,7 +262,7 @@ ${formData.message}`;
                     </div>
                     <div>
                       <p className="font-medium text-[#0B1B2B] text-sm">Email</p>
-                      <p className="text-xs text-[#64748B]">coindesetudiants@gmail.com</p>
+                      <p className="text-xs text-[#64748B]">{LINKS.EMAIL_DISPLAY}</p>
                     </div>
                   </a>
                 </div>

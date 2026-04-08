@@ -4,6 +4,7 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { ReassuranceBar } from '../components/ReassuranceBar';
+import { WhatsAppProofSection } from '../components/WhatsAppProofSection';
 import { LINKS, FAQ_BAILLEURS } from '../config/constants';
 
 export const LogementsPage = () => {
@@ -42,8 +43,8 @@ export const LogementsPage = () => {
               </div>
               <ReassuranceBar />
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="hidden lg:block">
-              <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Appartement" className="rounded-2xl shadow-xl" />
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="order-first lg:order-last">
+              <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Appartement" className="rounded-2xl shadow-xl w-full max-h-64 lg:max-h-none object-cover" />
             </motion.div>
           </div>
         </div>
@@ -89,7 +90,7 @@ export const LogementsPage = () => {
 
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
             {[
-              { icon: Target, title: "Visibilité ciblée", desc: "+6000 étudiants actifs" },
+              { icon: Target, title: "Visibilité ciblée", desc: "+10 000 étudiants actifs" },
               { icon: Zap, title: "Gain de temps", desc: "Demandes qualifiées" },
               { icon: Shield, title: "Confiance", desc: "Communauté modérée" },
               { icon: Heart, title: "Impact positif", desc: "Aidez des étudiants" },
@@ -143,6 +144,17 @@ export const LogementsPage = () => {
           </div>
         </div>
       </section>
+
+      <WhatsAppProofSection
+        title="Ce que disent nos bailleurs"
+        titleAccent="et locataires"
+        subtitle="Des retours authentiques partagés dans notre groupe — mises en relation réussies."
+        items={[
+          { src: '/images/proof/logement-1.png', label: 'Retour bailleur / propriétaire' },
+          { src: '/images/proof/logement-2.png', label: 'Retour bailleur / propriétaire' },
+        ]}
+        legal="Les captures sont des retours authentiques. Aucun résultat n'est garanti."
+      />
     </div>
   );
 };

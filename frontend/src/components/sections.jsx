@@ -185,7 +185,7 @@ export const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <Badge variant="secondary" className="bg-primary/10 text-primary px-4 py-2 text-sm">
                 <Users className="w-4 h-4 mr-2" />
-                +6000 étudiants
+                +10 000 étudiants
               </Badge>
               <Badge variant="secondary" className="bg-primary/10 text-primary px-4 py-2 text-sm">
                 <Building className="w-4 h-4 mr-2" />
@@ -534,7 +534,7 @@ export const HowItWorksSection = () => {
     {
       icon: MessageCircle,
       title: "Rejoins le WhatsApp",
-      description: "Intègre notre communauté de +6000 étudiants en un clic.",
+      description: "Intègre notre communauté de +10 000 étudiants en un clic.",
     },
     {
       icon: Search,
@@ -770,7 +770,7 @@ export const DonationsSection = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {[
-              { icon: Target, title: "Visibilité ciblée", desc: "Touchez directement +6000 étudiants" },
+              { icon: Target, title: "Visibilité ciblée", desc: "Touchez directement +10 000 étudiants" },
               { icon: Zap, title: "Gain de temps", desc: "Demandes plus claires et qualifiées" },
               { icon: Shield, title: "Confiance", desc: "Communauté modérée + partenaires" },
               { icon: Heart, title: "Impact positif", desc: "Aidez des étudiants sérieux" },
@@ -920,7 +920,7 @@ export const JobsSection = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {[
-              { title: "Accès direct", desc: "Communauté étudiante active de +6000 membres" },
+              { title: "Accès direct", desc: "Communauté étudiante active de +10 000 membres" },
               { title: "Publication simple", desc: "Formulaire rapide, diffusion immédiate" },
               { title: "Ciblage précis", desc: "Par ville, domaine et type de contrat" },
               { title: "Image employeur", desc: "Montrez votre engagement envers les étudiants" },
@@ -1314,7 +1314,7 @@ export const FinalCTASection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Rejoins plus de 6000 étudiants<br />
+            Rejoins plus de 10 000 étudiants<br />
             qui s'entraident chaque jour
           </h2>
           

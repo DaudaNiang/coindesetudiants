@@ -10,6 +10,7 @@ import { Badge } from '../components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { ReassuranceBar } from '../components/ReassuranceBar';
 import { Footer } from '../components/Footer';
+import { WhatsAppProofSection } from '../components/WhatsAppProofSection';
 import { LINKS, STATS, TESTIMONIALS, FAQ_SECURITE } from '../config/constants';
 
 // Hero Section
@@ -74,7 +75,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-3">
               <Badge className="badge badge-primary">
                 <Users className="w-4 h-4 mr-2" />
-                +6000 étudiants
+                +10 000 étudiants
               </Badge>
               <Badge className="badge badge-accent">
                 <Shield className="w-4 h-4 mr-2" />
@@ -242,45 +243,60 @@ const CategoriesSection = () => {
   );
 };
 
-// Stats Section - Now lower in the page
+// Icônes par stat
+const STAT_ICONS = [Users, Home, Gift, Briefcase, ShoppingBag];
+
+// Stats Section - Premium dark
 const StatsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} data-testid="stats-section" className="py-20 gradient-stats relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-60 h-60 bg-white rounded-full blur-3xl" />
-      </div>
-      
+    <section ref={ref} data-testid="stats-section" className="py-24 gradient-stats relative overflow-hidden">
+      {/* Glow orbs */}
+      <div className="absolute top-0 left-1/4 w-72 h-72 rounded-full blur-3xl opacity-10"
+        style={{ background: 'radial-gradient(circle, #1E5AA8, transparent)' }} />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full blur-3xl opacity-10"
+        style={{ background: 'radial-gradient(circle, #4CAF50, transparent)' }} />
+
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Une communauté qui grandit chaque jour
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#0097b2] mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#4CAF50] animate-pulse" />
+            Communauté active
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B]">
+            Une communauté qui{' '}
+            <span className="gradient-text">grandit chaque jour</span>
           </h2>
         </motion.div>
-        
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {STATS.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: index * 0.15 }}
-              className="stat-card"
-            >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                {isInView && <CountUp target={stat.value} suffix={stat.suffix} />}
-              </div>
-              <p className="text-white/80 font-medium">{stat.label}</p>
-            </motion.div>
-          ))}
+
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+          {STATS.map((stat, index) => {
+            const Icon = STAT_ICONS[index] || Users;
+            return (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.12, ease: 'easeOut' }}
+                className="stat-card"
+              >
+                <div className="stat-icon-wrap">
+                  <Icon className="w-5 h-5 text-[#1E5AA8]" />
+                </div>
+                <div className="stat-number">
+                  {isInView && <CountUp target={stat.value} suffix={stat.suffix} />}
+                </div>
+                <p className="stat-label">{stat.label}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -384,7 +400,7 @@ const TestimonialsSection = () => {
         <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-4">
           Ce qu'ils disent de nous
         </h2>
-        <p className="text-[#64748B] text-lg">+6000 étudiants nous font confiance</p>
+        <p className="text-[#64748B] text-lg">+10 000 étudiants nous font confiance</p>
       </motion.div>
 
       {/* Carousel track */}
@@ -437,7 +453,7 @@ const FinalCTASection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
             Rejoins{' '}
             <span className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] bg-clip-text text-transparent">
-              +6000 étudiants
+              +10 000 étudiants
             </span>{' '}
             qui s'entraident
           </h2>
@@ -479,6 +495,19 @@ export const HomePage = () => {
       <StatsSection />
       <SecuritySection />
       <TestimonialsSection />
+
+      <WhatsAppProofSection
+        title="Aperçu des échanges"
+        titleAccent="de la communauté"
+        subtitle="Quelques partages récents de nos membres : logements trouvés, entraide concrète, échanges utiles au quotidien."
+        items={[
+          { src: '/images/accueil-1.png', label: 'Retour bailleur / propriétaire' },
+          { src: '/images/accueil-2.png', label: 'Retour bailleur / propriétaire' },
+          { src: '/images/accueil-3.png', label: 'Retour étudiant satisfait' },
+          { src: '/images/accueil-4.png', label: 'Retour bailleur / propriétaire' },
+        ]}
+        legal="Tous ces résultats ne sont pas des promesses de résultats."
+      />
 
       {/* Dark Premium Wrapper */}
       <div className="dark-premium-wrapper">

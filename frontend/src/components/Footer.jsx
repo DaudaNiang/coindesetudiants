@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Mail, MessageCircle, Heart } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MessageCircle, Heart, Phone } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { LINKS, NAV_ITEMS } from '../config/constants';
 
@@ -58,19 +58,31 @@ export const Footer = ({ variant = 'default' }) => {
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4 text-white">Contact</h4>
-            <a 
-              href={LINKS.EMAIL} 
-              className="text-white/70 hover:text-[#7ed957] transition-colors text-sm block mb-4"
-            >
-              coindesetudiants@gmail.com
-            </a>
+            <div className="space-y-2 mb-4">
+              <a
+                href={LINKS.EMAIL}
+                className="flex items-center gap-2 text-white/70 hover:text-[#7ed957] transition-colors text-sm"
+              >
+                <Mail className="w-3.5 h-3.5 flex-shrink-0" />
+                {LINKS.EMAIL_DISPLAY}
+              </a>
+              <a
+                href={LINKS.WHATSAPP_CONTACT}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-white/70 hover:text-[#7ed957] transition-colors text-sm"
+              >
+                <Phone className="w-3.5 h-3.5 flex-shrink-0" />
+                {LINKS.PHONE}
+              </a>
+            </div>
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
-              <Button 
+              <Button
                 data-testid="footer-whatsapp-btn"
                 className="bg-gradient-to-r from-[#0097b2] to-[#7ed957] hover:from-[#0086a0] hover:to-[#6bc94a] text-white rounded-full px-5 py-2 font-semibold shadow-lg shadow-[#0097b2]/20"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
-                Rejoindre WhatsApp
+                Rejoindre le canal
               </Button>
             </a>
           </div>
