@@ -5,7 +5,6 @@ import { Toaster } from "./components/ui/sonner";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
-import { MobileBottomNav } from "./components/MobileBottomNav";
 
 const HomePage = lazy(() => import("./pages/HomePage").then(m => ({ default: m.HomePage })));
 const LogementsPage = lazy(() => import("./pages/LogementsPage").then(m => ({ default: m.LogementsPage })));
@@ -29,7 +28,6 @@ const Layout = ({ children }) => {
       {/* Footer is embedded in HomePage's dark wrapper, show standalone for other pages */}
       {!isHomePage && <Footer />}
       <WhatsAppFloat />
-      <MobileBottomNav />
     </div>
   );
 };
