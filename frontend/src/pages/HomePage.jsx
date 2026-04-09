@@ -485,15 +485,11 @@ const AppComingSoonSection = () => {
               {/* Google Play */}
               <div className="flex items-center gap-3 px-5 py-3 rounded-2xl cursor-default select-none"
                 style={{ background: '#0B1B2B', border: '1.5px solid #1E5AA833' }}>
-                <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 512 512" fill="none">
-                  <path d="M48 59.49v393a4.33 4.33 0 007.37 3.07L274 256 55.37 56.42A4.33 4.33 0 0048 59.49z" fill="#4285F4"/>
-                  <path d="M400.32 182.68l-78.06-44.86-97.52 97.56 97.52 97.55 78.06-44.86c22.23-12.79 22.23-43.23 0-56.39z" fill="#FBBC04"/>
-                  <path d="M55.37 452.58L274 256 160.56 142.56 55.37 56.42" fill="none"/>
-                  <path d="M274 256L55.37 56.42l-.08-.07a4.31 4.31 0 00-7.29 3.14v393a4.31 4.31 0 007.37 3.07z" fill="#4285F4"/>
-                  <path d="M274 256l48.26-48.18-78.06-44.86L160.56 142.56 274 256z" fill="#34A853"/>
-                  <path d="M322.26 374.18L274 256 160.56 369.44l83.64-48.12 78.06-44.86z" fill="#EA4335"/>
-                  <path d="M48 452.51a4.31 4.31 0 007.37 3.07l.08-.06 112.08-112.08L55.37 452.58" fill="#34A853"/>
-                  <path d="M322.26 137.82l78.06 44.86 33.77-19.4c22.23-12.79 22.23-43.23 0-56l-33.77-19.4-78.06 44.86L274 256z" fill="#FBBC04"/>
+                <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24">
+                  <path d="M3.18 23.76a2 2 0 001.83-.15l13.5-7.8-3.02-3.02-12.31 11z" fill="#EA4335"/>
+                  <path d="M22.5 10.56l-3.96-2.3-3.38 3.38 3.38 3.38 3.99-2.3a1.54 1.54 0 000-2.16z" fill="#FBBC04"/>
+                  <path d="M3.18.24A2 2 0 001 2.37v19.26a2 2 0 002.18 1.91L15.49 12 3.18.24z" fill="#4285F4"/>
+                  <path d="M18.54 8.26L5.01.15A2 2 0 003.18.24L15.49 12l3.05-3.74z" fill="#34A853"/>
                 </svg>
                 <div>
                   <p className="text-white/60 text-[10px] uppercase tracking-wide">Bientôt sur</p>
@@ -525,7 +521,7 @@ const AppComingSoonSection = () => {
                 src="/images/app-preview.png"
                 alt="Application Coin des Étudiants"
                 className="w-full h-auto block"
-                style={{ maxWidth: '300px' }}
+                style={{ maxWidth: '300px', borderRadius: '28px' }}
                 loading="lazy"
                 decoding="async"
               />
