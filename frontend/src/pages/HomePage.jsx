@@ -485,11 +485,15 @@ const AppComingSoonSection = () => {
               {/* Google Play */}
               <div className="flex items-center gap-3 px-5 py-3 rounded-2xl cursor-default select-none"
                 style={{ background: '#0B1B2B', border: '1.5px solid #1E5AA833' }}>
-                <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-                  <path d="M3.18 23.76c.37.2.8.22 1.2.06l13.2-7.63-2.82-2.82-11.58 10.39z" fill="#EA4335"/>
-                  <path d="M21.54 10.27L18.6 8.57l-3.12 3.12 3.12 3.13 2.97-1.72c.84-.49.84-1.81-.03-2.83z" fill="#FBBC04"/>
-                  <path d="M2.1.59C1.8.91 1.62 1.38 1.62 1.98v20.04c0 .6.18 1.07.48 1.38l.08.07 11.22-11.22v-.27L2.18.52 2.1.59z" fill="#4285F4"/>
-                  <path d="M17.58 12L14.46 8.88 3.18.24C2.78.08 2.35.1 1.98.3L14.46 12.75 17.58 12z" fill="#34A853"/>
+                <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 512 512" fill="none">
+                  <path d="M48 59.49v393a4.33 4.33 0 007.37 3.07L274 256 55.37 56.42A4.33 4.33 0 0048 59.49z" fill="#4285F4"/>
+                  <path d="M400.32 182.68l-78.06-44.86-97.52 97.56 97.52 97.55 78.06-44.86c22.23-12.79 22.23-43.23 0-56.39z" fill="#FBBC04"/>
+                  <path d="M55.37 452.58L274 256 160.56 142.56 55.37 56.42" fill="none"/>
+                  <path d="M274 256L55.37 56.42l-.08-.07a4.31 4.31 0 00-7.29 3.14v393a4.31 4.31 0 007.37 3.07z" fill="#4285F4"/>
+                  <path d="M274 256l48.26-48.18-78.06-44.86L160.56 142.56 274 256z" fill="#34A853"/>
+                  <path d="M322.26 374.18L274 256 160.56 369.44l83.64-48.12 78.06-44.86z" fill="#EA4335"/>
+                  <path d="M48 452.51a4.31 4.31 0 007.37 3.07l.08-.06 112.08-112.08L55.37 452.58" fill="#34A853"/>
+                  <path d="M322.26 137.82l78.06 44.86 33.77-19.4c22.23-12.79 22.23-43.23 0-56l-33.77-19.4-78.06 44.86L274 256z" fill="#FBBC04"/>
                 </svg>
                 <div>
                   <p className="text-white/60 text-[10px] uppercase tracking-wide">Bientôt sur</p>
