@@ -439,6 +439,113 @@ const TestimonialsSection = () => {
   );
 };
 
+// App Coming Soon Section
+const AppComingSoonSection = () => {
+  return (
+    <section className="section-spacing overflow-hidden" style={{ background: 'linear-gradient(160deg, #f0f7ff 0%, #ffffff 50%, #f0fff4 100%)' }}>
+      <div className="container-custom">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+
+          {/* Texte */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-6"
+              style={{ background: 'linear-gradient(135deg, #1E5AA811, #4CAF5011)', border: '1.5px solid #1E5AA833', color: '#1E5AA8' }}>
+              <span className="w-2 h-2 rounded-full bg-[#4CAF50] animate-pulse" />
+              Bientôt disponible
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B2B] mb-5 leading-tight">
+              L'application{' '}
+              <span className="gradient-text">Coin des Étudiants</span>{' '}
+              arrive bientôt
+            </h2>
+
+            <p className="text-[#64748B] text-lg mb-8 leading-relaxed">
+              Toute la communauté dans ta poche — logements, dons, offres, entraide et bien plus encore, directement depuis ton téléphone.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              {/* App Store */}
+              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl cursor-default select-none"
+                style={{ background: '#0B1B2B', border: '1.5px solid #1E5AA833' }}>
+                <svg className="w-7 h-7 text-white flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <div>
+                  <p className="text-white/60 text-[10px] uppercase tracking-wide">Bientôt sur</p>
+                  <p className="text-white font-bold text-sm">App Store</p>
+                </div>
+              </div>
+
+              {/* Google Play */}
+              <div className="flex items-center gap-3 px-5 py-3 rounded-2xl cursor-default select-none"
+                style={{ background: '#0B1B2B', border: '1.5px solid #1E5AA833' }}>
+                <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+                  <path d="M3.18 23.76c.37.2.8.22 1.2.06l13.2-7.63-2.82-2.82-11.58 10.39z" fill="#EA4335"/>
+                  <path d="M21.54 10.27L18.6 8.57l-3.12 3.12 3.12 3.13 2.97-1.72c.84-.49.84-1.81-.03-2.83z" fill="#FBBC04"/>
+                  <path d="M2.1.59C1.8.91 1.62 1.38 1.62 1.98v20.04c0 .6.18 1.07.48 1.38l.08.07 11.22-11.22v-.27L2.18.52 2.1.59z" fill="#4285F4"/>
+                  <path d="M17.58 12L14.46 8.88 3.18.24C2.78.08 2.35.1 1.98.3L14.46 12.75 17.58 12z" fill="#34A853"/>
+                </svg>
+                <div>
+                  <p className="text-white/60 text-[10px] uppercase tracking-wide">Bientôt sur</p>
+                  <p className="text-white font-bold text-sm">Google Play</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Screenshot de l'app */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="flex justify-center"
+          >
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative"
+            >
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-3xl blur-3xl opacity-20 -z-10"
+                style={{ background: 'linear-gradient(135deg, #1E5AA8, #4CAF50)' }} />
+
+              {/* Frame téléphone */}
+              <div className="rounded-[2.5rem] overflow-hidden shadow-2xl"
+                style={{ border: '8px solid #0B1B2B', maxWidth: '260px' }}>
+                <img
+                  src="/images/app-preview.png"
+                  alt="Application Coin des Étudiants"
+                  className="w-full h-auto block"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              {/* Badge "Bientôt" flottant */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                className="absolute -right-6 top-8 rounded-2xl px-3 py-2 shadow-lg text-center"
+                style={{ background: 'white', border: '1.5px solid #4CAF5033', minWidth: '90px' }}
+              >
+                <p className="text-xs font-bold text-[#4CAF50]">🚀 Bientôt</p>
+                <p className="text-[10px] text-[#64748B]">iOS & Android</p>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // Final CTA - Dark Premium Theme
 const FinalCTASection = () => {
   return (
@@ -508,6 +615,9 @@ export const HomePage = () => {
         ]}
         legal="Tous ces résultats ne sont pas des promesses de résultats."
       />
+
+      {/* App Coming Soon */}
+      <AppComingSoonSection />
 
       {/* Dark Premium Wrapper */}
       <div className="dark-premium-wrapper">

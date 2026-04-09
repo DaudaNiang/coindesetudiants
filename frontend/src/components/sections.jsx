@@ -939,7 +939,7 @@ export const JobsSection = () => {
                 size="lg"
                 className="bg-secondary hover:bg-secondary-600 text-white rounded-full px-8 btn-hover"
               >
-                Publier une offre
+                Devenir partenaire
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </a>

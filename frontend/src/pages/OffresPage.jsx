@@ -31,7 +31,7 @@ export const OffresPage = () => {
                 </a>
                 <a href={LINKS.PUBLIER_OFFRE} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full sm:w-auto border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white rounded-full px-6 font-semibold">
-                    Publier une offre
+                    Devenir partenaire
                   </Button>
                 </a>
               </div>

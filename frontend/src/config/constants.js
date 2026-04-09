@@ -4,7 +4,7 @@ export const LINKS = {
   WHATSAPP_CONTACT: "https://wa.me/33746444913",
   PUBLIER: "https://docs.google.com/forms/d/e/1FAIpQLSf4XQk94t2n5fawvOB7JFMzKwZzsFoVEqibHngnTmk-hvGk8A/viewform",
   PROPOSER_LOGEMENT: "https://docs.google.com/forms/d/e/1FAIpQLSf4XQk94t2n5fawvOB7JFMzKwZzsFoVEqibHngnTmk-hvGk8A/viewform",
-  PUBLIER_OFFRE: "https://docs.google.com/forms/d/e/1FAIpQLSf4XQk94t2n5fawvOB7JFMzKwZzsFoVEqibHngnTmk-hvGk8A/viewform",
+  PUBLIER_OFFRE: "https://docs.google.com/forms/d/e/1FAIpQLSfxFWhEgEM0nuMQ1LxaQ293BqxbW6cxz4bv4Nd62cu1i846mQ/viewform",
   INSTAGRAM: "https://www.instagram.com/coin_des_etudiants/",
   LINKEDIN: "https://www.linkedin.com/company/coin-des-etudiants/",
   TIKTOK: "https://www.tiktok.com/@coindesetudiants",
