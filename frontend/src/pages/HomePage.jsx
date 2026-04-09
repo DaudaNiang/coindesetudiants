@@ -516,17 +516,15 @@ const AppComingSoonSection = () => {
               <div className="absolute inset-0 rounded-3xl blur-3xl opacity-20 -z-10"
                 style={{ background: 'linear-gradient(135deg, #1E5AA8, #4CAF50)' }} />
 
-              {/* Frame téléphone */}
-              <div className="rounded-[2.5rem] overflow-hidden shadow-2xl"
-                style={{ border: '8px solid #0B1B2B', maxWidth: '260px' }}>
-                <img
-                  src="/images/app-preview.png"
-                  alt="Application Coin des Étudiants"
-                  className="w-full h-auto block"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+              {/* Screenshot app */}
+              <img
+                src="/images/app-preview.png"
+                alt="Application Coin des Étudiants"
+                className="w-full h-auto block"
+                style={{ maxWidth: '300px' }}
+                loading="lazy"
+                decoding="async"
+              />
 
               {/* Badge "Bientôt" flottant */}
               <motion.div
