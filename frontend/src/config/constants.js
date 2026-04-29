@@ -8,8 +8,8 @@ export const LINKS = {
   INSTAGRAM: "https://www.instagram.com/coin_des_etudiants/",
   LINKEDIN: "https://www.linkedin.com/company/coin-des-etudiants/",
   TIKTOK: "https://www.tiktok.com/@coindesetudiants",
-  EMAIL: "mailto:coindesetudiants@gmail.com",
-  EMAIL_DISPLAY: "coindesetudiants@gmail.com",
+  EMAIL: "mailto:coindetudiants@gmail.com",
+  EMAIL_DISPLAY: "coindetudiants@gmail.com",
   PHONE: "+33 7 46 44 49 13",
 };
 

@@ -115,7 +115,7 @@ export const OffresPage = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <a href={LINKS.PUBLIER_OFFRE} target="_blank" rel="noopener noreferrer">
               <Button className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white rounded-full px-6 font-semibold">
-                Publier une offre <ArrowRight className="w-4 h-4 ml-2" />
+                Devenir partenaire <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>
             <a href={LINKS.WHATSAPP_GROUP} target="_blank" rel="noopener noreferrer">
